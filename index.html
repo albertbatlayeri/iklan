@@ -457,14 +457,14 @@ input[type="file"]{display:none}
         <div class="syarat-item"><div class="syarat-icon">⏰</div>Konten tayang dalam 1x24 jam setelah pembayaran dan konten diterima.</div>
         <div class="syarat-item"><div class="syarat-icon">📅</div>Retainer: periode berjalan sejak pembayaran diterima. Jatah tidak terpakai hangus di akhir periode. Jadwal posting disepakati bersama.</div>
         <div class="syarat-item"><div class="syarat-icon">📌</div>Slot pin IG & TikTok terbatas (maks. 3 slot bersamaan). Booking lebih awal untuk mengamankan slot.</div>
-        <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: redaksi@lelemuku.com atau WA: 081234567890</div>
+        <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9be9fefffaf0e8f2dbf7fef7fef6eef0eeb5f8f4f6">[email&#160;protected]</a> atau WA: 081234567890</div>
       </div>
     </div>
   </div>
 
 </div><!-- end container -->
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzXQlkoMb3hlRBc-xAv4eVyEQTukeJ4erz60LRvNN8lK-gcmunC8PFrlojhfkG7Izek/exec";
 
 var HARGA = {
@@ -757,24 +757,28 @@ function submitForm() {
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span>Mengirim pesanan...';
 
+  // Gunakan no-cors mode untuk bypass CORS restriction
+  // Apps Script menerima data via URLSearchParams
+  var formPayload = new URLSearchParams();
+  formPayload.append("data", JSON.stringify(payload));
+
   fetch(WEBAPP_URL, {
     method: "POST",
-    body: JSON.stringify(payload)
+    mode: "no-cors",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: formPayload
   })
-  .then(function(r) { return r.json(); })
-  .then(function(data) {
-    if (data.status === "ok") {
-      document.getElementById("formWrapper").style.display = "none";
-      document.getElementById("successState").classList.add("show");
-      window.scrollTo({top: 0, behavior: "smooth"});
-    } else {
-      throw new Error(data.message || "Terjadi kesalahan");
-    }
+  .then(function() {
+    // no-cors selalu resolve (tidak bisa baca response)
+    // Langsung tampilkan success
+    document.getElementById("formWrapper").style.display = "none";
+    document.getElementById("successState").classList.add("show");
+    window.scrollTo({top: 0, behavior: "smooth"});
   })
   .catch(function(err) {
     btn.disabled = false;
     btn.innerHTML = "Kirim Pesanan →";
-    document.getElementById("alertError").textContent = "Gagal mengirim: " + err.message + ". Coba lagi atau hubungi redaksi@lelemuku.com";
+    document.getElementById("alertError").textContent = "Gagal mengirim. Coba lagi atau hubungi redaksi@lelemuku.com";
     document.getElementById("alertError").classList.add("show");
     window.scrollTo({top: 0, behavior: "smooth"});
   });
@@ -811,14 +815,4 @@ document.getElementById("jenisOrder").addEventListener("change", updateOrderCalc
 document.getElementById("durasi").addEventListener("change", updateOrderCalc);
 document.getElementById("tier").addEventListener("change", updateOrderCalc);
 document.getElementById("kalcJenis").addEventListener("change", updateKalc);
-document.getElementById("kalcDurasi").addEventListener("change", updateKalc);
-document.getElementById("kalcTier").addEventListener("change", updateKalc);
-
-// ---- INIT ----
-applyTheme(currentTheme);
-setMinDate();
-updateOrderCalc();
-updateKalc();
-</script>
-</body>
-</html>
+document.getElementById("kalcDurasi").add
