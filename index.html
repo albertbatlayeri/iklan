@@ -8,41 +8,56 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--kuning:#FFB703;--kuning-hover:#FFC933}
-[data-theme="dark"]{--bg:#0D1B2A;--bg-card:rgba(255,255,255,0.04);--bg-result:linear-gradient(135deg,rgba(29,53,87,0.6),rgba(13,27,42,0.8));--border:rgba(255,255,255,0.08);--border-result:rgba(69,123,157,0.4);--text-primary:#F8F9FA;--text-secondary:rgba(248,249,250,0.65);--text-muted:rgba(255,255,255,0.4);--text-label:rgba(255,255,255,0.45);--text-section:#457B9D;--select-bg:rgba(255,255,255,0.06);--select-border:rgba(255,255,255,0.12);--addon-bg:rgba(255,255,255,0.05);--addon-on-bg:rgba(255,183,3,0.12);--addon-on-border:rgba(255,183,3,0.5);--stat-bg:rgba(255,255,255,0.06);--stat-border:rgba(255,255,255,0.1);--divider:rgba(255,255,255,0.1);--syarat-bg:rgba(69,123,157,0.2);--jatah-bg:rgba(69,123,157,0.2);--jatah-border:rgba(69,123,157,0.4);--jatah-color:#A8DAFF;--hero-glow:rgba(69,123,157,0.25);--toggle-bg:rgba(255,255,255,0.08);--toggle-border:rgba(255,255,255,0.15);--featured-bg:rgba(255,183,3,0.05);--featured-border:rgba(255,183,3,0.35);--section-line:rgba(255,255,255,0.08);--platform-bg:rgba(255,255,255,0.08);--platform-color:rgba(255,255,255,0.6)}
-[data-theme="light"]{--bg:#F0F4F8;--bg-card:#FFFFFF;--bg-result:linear-gradient(135deg,#E8F0FE,#F0F7FF);--border:rgba(0,0,0,0.08);--border-result:rgba(29,53,87,0.2);--text-primary:#0D1B2A;--text-secondary:rgba(13,27,42,0.7);--text-muted:rgba(13,27,42,0.45);--text-label:rgba(13,27,42,0.5);--text-section:#1D3557;--select-bg:#FFFFFF;--select-border:rgba(0,0,0,0.12);--addon-bg:#F8F9FA;--addon-on-bg:rgba(255,183,3,0.1);--addon-on-border:rgba(255,183,3,0.6);--stat-bg:#FFFFFF;--stat-border:rgba(0,0,0,0.08);--divider:rgba(0,0,0,0.08);--syarat-bg:rgba(29,53,87,0.08);--jatah-bg:rgba(29,53,87,0.06);--jatah-border:rgba(29,53,87,0.15);--jatah-color:#1D3557;--hero-glow:rgba(29,53,87,0.08);--toggle-bg:rgba(0,0,0,0.05);--toggle-border:rgba(0,0,0,0.1);--featured-bg:rgba(255,183,3,0.05);--featured-border:rgba(255,183,3,0.5);--section-line:rgba(0,0,0,0.06);--platform-bg:rgba(0,0,0,0.06);--platform-color:rgba(13,27,42,0.6)}
+[data-theme="dark"]{--bg:#0D1B2A;--bg-card:rgba(255,255,255,0.04);--bg-input:rgba(255,255,255,0.06);--bg-result:linear-gradient(135deg,rgba(29,53,87,0.6),rgba(13,27,42,0.8));--border:rgba(255,255,255,0.08);--border-input:rgba(255,255,255,0.12);--border-focus:rgba(255,183,3,0.6);--border-result:rgba(69,123,157,0.4);--text-primary:#F8F9FA;--text-secondary:rgba(248,249,250,0.65);--text-muted:rgba(255,255,255,0.4);--text-label:rgba(255,255,255,0.5);--text-section:#457B9D;--addon-bg:rgba(255,255,255,0.05);--addon-on-bg:rgba(255,183,3,0.12);--addon-on-border:rgba(255,183,3,0.5);--stat-bg:rgba(255,255,255,0.06);--stat-border:rgba(255,255,255,0.1);--divider:rgba(255,255,255,0.1);--syarat-bg:rgba(69,123,157,0.2);--jatah-bg:rgba(69,123,157,0.2);--jatah-border:rgba(69,123,157,0.4);--jatah-color:#A8DAFF;--hero-glow:rgba(69,123,157,0.25);--toggle-bg:rgba(255,255,255,0.08);--toggle-border:rgba(255,255,255,0.15);--featured-bg:rgba(255,183,3,0.05);--featured-border:rgba(255,183,3,0.35);--section-line:rgba(255,255,255,0.08);--platform-bg:rgba(255,255,255,0.08);--platform-color:rgba(255,255,255,0.6);--error-bg:rgba(230,57,70,0.1);--error-border:rgba(230,57,70,0.4);--success-bg:rgba(29,159,75,0.1);--success-border:rgba(29,159,75,0.4)}
+[data-theme="light"]{--bg:#F0F4F8;--bg-card:#FFFFFF;--bg-input:#FFFFFF;--bg-result:linear-gradient(135deg,#E8F0FE,#F0F7FF);--border:rgba(0,0,0,0.08);--border-input:rgba(0,0,0,0.15);--border-focus:rgba(255,183,3,0.7);--border-result:rgba(29,53,87,0.2);--text-primary:#0D1B2A;--text-secondary:rgba(13,27,42,0.7);--text-muted:rgba(13,27,42,0.45);--text-label:rgba(13,27,42,0.55);--text-section:#1D3557;--addon-bg:#F8F9FA;--addon-on-bg:rgba(255,183,3,0.1);--addon-on-border:rgba(255,183,3,0.6);--stat-bg:#FFFFFF;--stat-border:rgba(0,0,0,0.08);--divider:rgba(0,0,0,0.08);--syarat-bg:rgba(29,53,87,0.08);--jatah-bg:rgba(29,53,87,0.06);--jatah-border:rgba(29,53,87,0.15);--jatah-color:#1D3557;--hero-glow:rgba(29,53,87,0.08);--toggle-bg:rgba(0,0,0,0.05);--toggle-border:rgba(0,0,0,0.1);--featured-bg:rgba(255,183,3,0.05);--featured-border:rgba(255,183,3,0.5);--section-line:rgba(0,0,0,0.06);--platform-bg:rgba(0,0,0,0.06);--platform-color:rgba(13,27,42,0.6);--error-bg:rgba(230,57,70,0.08);--error-border:rgba(230,57,70,0.4);--success-bg:rgba(29,159,75,0.08);--success-border:rgba(29,159,75,0.4)}
 
 body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
 
 .theme-toggle{position:fixed;top:16px;right:16px;z-index:100;display:flex;align-items:center;gap:8px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:100px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--text-primary);font-family:'Plus Jakarta Sans',sans-serif;transition:all .2s;backdrop-filter:blur(10px)}
 .theme-toggle:hover{border-color:var(--kuning);color:var(--kuning)}
 
-.hero{position:relative;padding:80px 24px 60px;text-align:center;overflow:hidden}
+.hero{position:relative;padding:80px 24px 50px;text-align:center;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--hero-glow) 0%,transparent 70%);pointer-events:none}
 .hero-badge{display:inline-block;background:rgba(255,183,3,0.15);border:1px solid rgba(255,183,3,0.4);color:var(--kuning);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
-.hero h1{font-family:'Sora',sans-serif;font-size:clamp(24px,5vw,48px);font-weight:700;line-height:1.15;margin-bottom:16px;color:var(--text-primary)}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(22px,5vw,46px);font-weight:700;line-height:1.15;margin-bottom:16px;color:var(--text-primary)}
 .hero h1 span{color:var(--kuning)}
-.hero p{font-size:16px;color:var(--text-secondary);max-width:520px;margin:0 auto 32px;line-height:1.7}
-.stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
-.stat-pill{background:var(--stat-bg);border:1px solid var(--stat-border);border-radius:100px;padding:8px 16px;font-size:13px;font-weight:500;color:var(--text-primary);transition:background .3s}
+.hero p{font-size:15px;color:var(--text-secondary);max-width:520px;margin:0 auto 28px;line-height:1.7}
+.stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.stat-pill{background:var(--stat-bg);border:1px solid var(--stat-border);border-radius:100px;padding:7px 14px;font-size:13px;font-weight:500;color:var(--text-primary)}
 .stat-pill strong{color:var(--kuning)}
 
-.container{max-width:900px;margin:0 auto;padding:0 20px 80px}
-.section-title{font-family:'Sora',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-section);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.container{max-width:860px;margin:0 auto;padding:0 20px 80px}
+.section-title{font-family:'Sora',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-section);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .section-title::after{content:'';flex:1;height:1px;background:var(--section-line)}
 
-.calc-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-bottom:16px;transition:background .3s,border-color .3s}
-.calc-title{font-family:'Sora',sans-serif;font-size:18px;font-weight:600;margin-bottom:6px;color:var(--text-primary)}
-.calc-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+/* TABS */
+.tabs{display:flex;gap:6px;margin-bottom:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:5px}
+.tab{flex:1;padding:10px;border-radius:10px;border:none;background:transparent;color:var(--text-muted);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.tab.active{background:var(--kuning);color:#0D1B2A}
 
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+/* CARD */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-bottom:14px;transition:background .3s,border-color .3s}
+.card-title{font-family:'Sora',sans-serif;font-size:16px;font-weight:600;margin-bottom:4px;color:var(--text-primary)}
+.card-sub{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+
+/* FORM */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
 .form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
 .form-group label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-label)}
-.form-group select{background:var(--select-bg);border:1px solid var(--select-border);border-radius:10px;color:var(--text-primary);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;padding:11px 36px 11px 14px;cursor:pointer;transition:border-color .2s,background .3s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:var(--select-bg)}
-.form-group select:focus{outline:none;border-color:var(--kuning)}
+.form-group label .req{color:#E63946;margin-left:2px}
+input,select,textarea{background:var(--bg-input);border:1px solid var(--border-input);border-radius:10px;color:var(--text-primary);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;padding:11px 14px;width:100%;transition:border-color .2s,background .3s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--border-focus)}
+input::placeholder,textarea::placeholder{color:var(--text-muted)}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;background-color:var(--bg-input)}
+textarea{resize:vertical;min-height:100px;line-height:1.6}
+.input-note{font-size:11px;color:var(--text-muted);margin-top:3px}
+.field-error{font-size:11px;color:#E63946;margin-top:3px;display:none}
+input.err,select.err,textarea.err{border-color:#E63946}
 
-.addon-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:10px}
-.addon-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+/* ADDON */
+.addon-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:4px}
 .addon-chip{display:flex;align-items:center;gap:8px;background:var(--addon-bg);border:1px solid var(--border);border-radius:10px;padding:9px 14px;font-size:13px;cursor:pointer;transition:all .18s;user-select:none;color:var(--text-primary)}
 .addon-chip:hover:not(.disabled){border-color:var(--kuning)}
 .addon-chip.on{background:var(--addon-on-bg);border-color:var(--addon-on-border);color:var(--kuning)}
@@ -51,43 +66,83 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .addon-chip.on .dot{background:var(--kuning);border-color:var(--kuning)}
 .addon-chip.on .dot::after{content:'✓';font-size:10px;color:#0D1B2A;font-weight:700}
 
-.result-box{background:var(--bg-result);border:1px solid var(--border-result);border-radius:14px;padding:20px 22px;margin-bottom:20px;transition:all .3s}
-.result-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
-.result-row{display:flex;justify-content:space-between;align-items:flex-start;font-size:13px}
+/* DURASI */
+.durasi-wrap{display:none}
+.durasi-wrap.show{display:flex;flex-direction:column;gap:6px}
+
+/* RESULT BOX */
+.result-box{background:var(--bg-result);border:1px solid var(--border-result);border-radius:14px;padding:18px 20px;margin:16px 0}
+.result-rows{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.result-row{display:flex;justify-content:space-between;font-size:13px}
 .result-row .lbl{color:var(--text-secondary);flex:1}
 .result-row .val{font-weight:500;color:var(--text-primary);text-align:right}
 .result-row.sub{padding-left:14px}
-.result-row.sub .lbl{font-size:12px;color:var(--text-muted)}
-.result-row.sub .val{font-size:12px;color:var(--text-muted)}
-.total-divider{height:1px;background:var(--divider);margin:12px 0}
+.result-row.sub .lbl,.result-row.sub .val{font-size:12px;color:var(--text-muted)}
+.total-divider{height:1px;background:var(--divider);margin:10px 0}
 .total-row{display:flex;justify-content:space-between;align-items:center}
-.total-label{font-size:13px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.08em}
-.total-amount{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;color:var(--kuning)}
+.total-label{font-size:12px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.08em}
+.total-amount{font-family:'Sora',sans-serif;font-size:24px;font-weight:700;color:var(--kuning)}
 .jatah-badge{display:inline-flex;align-items:center;gap:6px;background:var(--jatah-bg);border:1px solid var(--jatah-border);border-radius:100px;padding:4px 12px;font-size:12px;color:var(--jatah-color);margin-top:10px}
 
-.cta-btn{display:block;width:100%;background:var(--kuning);color:#0D1B2A;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;text-align:center;padding:16px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;letter-spacing:.02em}
-.cta-btn:hover{background:var(--kuning-hover);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,183,3,.3)}
-.cta-note{text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px}
+/* UPLOAD */
+.upload-area{border:1.5px dashed var(--border-input);border-radius:10px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--bg-input)}
+.upload-area:hover{border-color:var(--kuning)}
+.upload-area.has-file{border-color:rgba(29,159,75,0.5);background:var(--success-bg)}
+.upload-icon{font-size:24px;margin-bottom:8px}
+.upload-text{font-size:13px;color:var(--text-muted)}
+.upload-text strong{color:var(--kuning)}
+.upload-filename{font-size:12px;color:var(--text-primary);margin-top:6px;font-weight:500}
+input[type="file"]{display:none}
 
-.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-@media(max-width:600px){.tier-cards{grid-template-columns:1fr}}
-.tier-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;transition:background .3s,border-color .3s}
+/* BUTTONS */
+.btn-submit{display:block;width:100%;background:var(--kuning);color:#0D1B2A;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;text-align:center;padding:16px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;letter-spacing:.02em;margin-top:8px}
+.btn-submit:hover:not(:disabled){background:var(--kuning-hover);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,183,3,.3)}
+.btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.btn-note{text-align:center;font-size:12px;color:var(--text-muted);margin-top:8px}
+
+/* ALERT */
+.alert{border-radius:12px;padding:14px 16px;font-size:13px;margin-bottom:16px;display:none}
+.alert.error{background:var(--error-bg);border:1px solid var(--error-border);color:#E63946}
+.alert.success{background:var(--success-bg);border:1px solid var(--success-border);color:#1D9F4B}
+.alert.show{display:block}
+
+/* SUCCESS STATE */
+.success-state{text-align:center;padding:40px 20px;display:none}
+.success-state.show{display:block}
+.success-icon{font-size:56px;margin-bottom:16px}
+.success-title{font-family:'Sora',sans-serif;font-size:22px;font-weight:700;margin-bottom:8px;color:var(--text-primary)}
+.success-desc{font-size:14px;color:var(--text-secondary);line-height:1.6;max-width:420px;margin:0 auto 24px}
+.btn-back{display:inline-block;padding:12px 28px;border-radius:10px;border:1px solid var(--border-input);color:var(--text-primary);font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;background:transparent;transition:all .2s}
+.btn-back:hover{border-color:var(--kuning);color:var(--kuning)}
+
+/* TIER CARDS */
+.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media(max-width:580px){.tier-cards{grid-template-columns:1fr}}
+.tier-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:16px;transition:background .3s,border-color .3s}
 .tier-card.featured{border-color:var(--featured-border);background:var(--featured-bg)}
-.tier-name{font-family:'Sora',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;color:var(--text-primary)}
-.tier-reach{font-size:11px;color:var(--text-muted);margin-bottom:12px}
-.tier-platform{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
-.ptag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:100px;background:var(--platform-bg);color:var(--platform-color);border:1px solid var(--border)}
+.tier-name{font-family:'Sora',sans-serif;font-size:15px;font-weight:700;margin-bottom:3px;color:var(--text-primary)}
+.tier-reach{font-size:11px;color:var(--text-muted);margin-bottom:10px}
+.tier-platform{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+.ptag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:100px;background:var(--platform-bg);color:var(--platform-color);border:1px solid var(--border)}
 .ptag.bonus{background:rgba(255,183,3,.12);color:var(--kuning);border-color:rgba(255,183,3,.3)}
-.tier-plabel{font-size:12px;color:var(--text-muted);margin-bottom:2px}
-.tier-pmain{font-family:'Sora',sans-serif;font-size:20px;font-weight:700;color:var(--text-primary)}
-.tier-pret{font-size:15px;font-weight:600;color:var(--text-primary)}
+.tier-plabel{font-size:11px;color:var(--text-muted);margin-bottom:1px}
+.tier-pmain{font-family:'Sora',sans-serif;font-size:18px;font-weight:700;color:var(--text-primary)}
+.tier-pret{font-size:14px;font-weight:600;color:var(--text-primary)}
 
-.syarat-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+/* SYARAT */
+.syarat-list{display:flex;flex-direction:column;gap:10px;margin-top:14px}
 .syarat-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text-secondary);line-height:1.5}
 .syarat-icon{width:20px;height:20px;min-width:20px;border-radius:50%;background:var(--syarat-bg);display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:1px}
 
-.durasi-wrap{display:none}
-.durasi-wrap.show{display:flex;flex-direction:column;gap:6px}
+/* LOADING SPINNER */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(13,27,42,0.3);border-top-color:#0D1B2A;border-radius:50%;animation:spin .6s linear infinite;margin-right:8px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* QRIS */
+.qris-box{text-align:center;padding:16px 0 8px}
+.qris-img{max-width:200px;border-radius:12px;border:1px solid var(--border)}
+.qris-merchant{font-size:13px;font-weight:600;color:var(--text-primary);margin-top:8px}
+.qris-note{font-size:12px;color:var(--text-muted);margin-top:4px}
 </style>
 </head>
 <body>
@@ -97,9 +152,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   <span id="themeText">Terang</span>
 </button>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-badge">Info Kejadian Terpercaya di Papua sejak 2009</div>
-  <h1>Iklankan Bisnis Kamu<br>di <span>Info Kejadian Kota Jayapura | IKKJ</span></h1>
+  <h1>Iklankan Bisnis Kamu<br>di <span>IKKJ | Lelemuku.com</span></h1>
   <p>Jangkau ratusan ribu warga Jayapura dan Papua melalui platform media sosial terbesar di Papua.</p>
   <div class="stats">
     <div class="stat-pill"><strong>400.000</strong> anggota Facebook</div>
@@ -108,138 +164,320 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
   </div>
 </div>
 
+<!-- MAIN -->
 <div class="container">
 
-  <div class="section-title">Kalkulator Harga Iklan</div>
-  <div class="calc-wrapper">
-    <div class="calc-title">Hitung Total Sebelum Pesan</div>
-    <div class="calc-sub">Pilih paket dan add-on — total harga langsung muncul di bawah.</div>
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('order')">📋 Pesan Iklan</button>
+    <button class="tab" onclick="switchTab('harga')">💰 Kalkulator Harga</button>
+    <button class="tab" onclick="switchTab('info')">📦 Paket & Syarat</button>
+  </div>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label>Jenis Order</label>
-        <select id="jenisOrder">
-          <option value="satuan">Posting Satuan</option>
-          <option value="retainer">Retainer Bulanan</option>
+  <!-- TAB: ORDER FORM -->
+  <div id="tab-order">
+    <div class="alert error" id="alertError"></div>
+
+    <!-- SUCCESS STATE -->
+    <div class="success-state" id="successState">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">Order Berhasil Dikirim!</div>
+      <div class="success-desc">Terima kasih! Tim IKKJ akan memverifikasi pembayaran dan konten kamu, lalu menghubungi via WhatsApp dalam 1x24 jam.</div>
+      <button class="btn-back" onclick="resetForm()">← Pesan Lagi</button>
+    </div>
+
+    <!-- FORM -->
+    <div id="formWrapper">
+
+      <!-- BAGIAN 1: DATA PEMESAN -->
+      <div class="card">
+        <div class="card-title">Data Pemesan</div>
+        <div class="card-sub">Isi dengan data yang bisa dihubungi tim IKKJ.</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nama Bisnis / Instansi <span class="req">*</span></label>
+            <input type="text" id="namaBisnis" placeholder="Contoh: Toko Serba Ada Papua">
+            <div class="field-error" id="err-namaBisnis">Wajib diisi</div>
+          </div>
+          <div class="form-group">
+            <label>Nama PIC (Penanggung Jawab) <span class="req">*</span></label>
+            <input type="text" id="namaPIC" placeholder="Nama lengkap">
+            <div class="field-error" id="err-namaPIC">Wajib diisi</div>
+          </div>
+          <div class="form-group">
+            <label>Nomor WhatsApp Aktif <span class="req">*</span></label>
+            <input type="tel" id="whatsapp" placeholder="08xxxxxxxxxx">
+            <div class="field-error" id="err-whatsapp">Format tidak valid</div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="email@bisnis.com">
+          </div>
+        </div>
+      </div>
+
+      <!-- BAGIAN 2: PAKET -->
+      <div class="card">
+        <div class="card-title">Pilih Paket</div>
+        <div class="card-sub">Hitung total harga di tab "Kalkulator Harga" sebelum memilih.</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Jenis Order <span class="req">*</span></label>
+            <select id="jenisOrder">
+              <option value="satuan">Posting Satuan</option>
+              <option value="retainer">Retainer Bulanan</option>
+            </select>
+          </div>
+          <div class="durasi-wrap form-group" id="durasiWrap">
+            <label>Durasi Retainer <span class="req">*</span></label>
+            <select id="durasi">
+              <option value="1 Bulan">1 Bulan</option>
+              <option value="3 Bulan">3 Bulan</option>
+              <option value="6 Bulan">6 Bulan</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>Pilih Tier <span class="req">*</span></label>
+            <select id="tier">
+              <option value="basic-satuan">Satuan Basic — Rp 400.000 (Facebook Group 400rb anggota)</option>
+              <option value="duo-satuan">Satuan Duo — Rp 700.000 (FB + Instagram)</option>
+              <option value="triple-satuan">Satuan Triple — Rp 1.000.000 (FB + IG + TikTok + YouTube bonus)</option>
+              <option value="basic-retainer">Retainer Basic — Rp 2.500.000/bln (8x posting FB/bulan)</option>
+              <option value="duo-retainer">Retainer Duo — Rp 4.500.000/bln (8x posting FB+IG/bulan)</option>
+              <option value="triple-retainer">Retainer Triple — Rp 6.500.000/bln (8x posting FB+IG+TikTok/bulan)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- ADDON -->
+        <div class="form-group">
+          <label>Add-On (opsional)</label>
+          <div class="addon-grid" style="margin-top:8px">
+            <div class="addon-chip disabled" id="chip-ig" onclick="toggleAddon('ig')">
+              <div class="dot"></div>Pin Instagram 7 hari <span style="font-size:11px;margin-left:4px;color:var(--text-muted)">+Rp 150rb</span>
+            </div>
+            <div class="addon-chip disabled" id="chip-tt" onclick="toggleAddon('tt')">
+              <div class="dot"></div>Pin TikTok 7 hari <span style="font-size:11px;margin-left:4px;color:var(--text-muted)">+Rp 150rb</span>
+            </div>
+            <div class="addon-chip" id="chip-lp" onclick="toggleAddon('lp')">
+              <div class="dot"></div>Laporan Engagement <span style="font-size:11px;margin-left:4px;color:var(--text-muted)">+Rp 50rb</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TOTAL -->
+        <div class="result-box">
+          <div class="result-rows" id="orderResultRows"></div>
+          <div class="total-divider"></div>
+          <div class="total-row">
+            <div class="total-label">Total Bayar</div>
+            <div class="total-amount" id="orderTotal">Rp 400.000</div>
+          </div>
+          <div id="orderJatah"></div>
+        </div>
+      </div>
+
+      <!-- BAGIAN 3: KONTEN -->
+      <div class="card">
+        <div class="card-title">Detail Konten Iklan</div>
+        <div class="card-sub">Semua konten wajib disiapkan oleh klien. IKKJ tidak menyediakan jasa produksi.</div>
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Jenis Konten <span class="req">*</span></label>
+            <select id="jenisKonten">
+              <option>Foto + Teks</option>
+              <option>Video + Teks</option>
+              <option>Teks Saja</option>
+              <option>Infografis + Teks</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tanggal Tayang yang Diinginkan <span class="req">*</span></label>
+            <input type="date" id="tanggalTayang">
+            <div class="field-error" id="err-tanggalTayang">Minimal H+1 dari hari ini</div>
+          </div>
+          <div class="form-group full">
+            <label>Isi Konten / Teks Iklan <span class="req">*</span></label>
+            <textarea id="isiKonten" placeholder="Tulis lengkap isi iklan Anda. Maks. 300 kata.&#10;Sertakan: nama bisnis, produk/layanan, harga (jika ada), kontak yang ditampilkan."></textarea>
+            <div class="field-error" id="err-isiKonten">Wajib diisi</div>
+          </div>
+
+          <!-- UPLOAD KONTEN -->
+          <div class="form-group full">
+            <label>Upload File Konten</label>
+            <div class="upload-area" id="uploadKontenArea" onclick="document.getElementById('fileKonten').click()">
+              <input type="file" id="fileKonten" accept="image/*,video/*" onchange="handleFileUpload('fileKonten','uploadKontenArea','kontenFilename','kontenBase64','kontenType')">
+              <div class="upload-icon">📁</div>
+              <div class="upload-text">Klik untuk upload <strong>Foto / Video</strong><br>JPG, PNG, MP4, MOV — Maks. 10MB</div>
+              <div class="upload-filename" id="kontenFilename"></div>
+            </div>
+            <div class="input-note">Jika file lebih dari 10MB, upload ke Google Drive lalu sertakan link di Catatan Tambahan.</div>
+          </div>
+
+          <div class="form-group full">
+            <label>Catatan Tambahan</label>
+            <textarea id="catatan" placeholder="Permintaan khusus, jam tayang preferensi, link Google Drive jika file besar, dll." style="min-height:70px"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD-ON PIN DATE -->
+      <div class="card" id="pinDateCard" style="display:none">
+        <div class="card-title">Tanggal Mulai Pin</div>
+        <div class="card-sub">Kapan pin IG/TikTok mulai ditayangkan?</div>
+        <div class="form-group" style="max-width:280px">
+          <label>Tanggal Mulai Pin</label>
+          <input type="date" id="tanggalPin">
+        </div>
+      </div>
+
+      <!-- BAGIAN 4: PEMBAYARAN -->
+      <div class="card">
+        <div class="card-title">Pembayaran</div>
+        <div class="card-sub">Scan QRIS berikut sesuai total pesanan kamu.</div>
+
+        <div class="qris-box">
+          <img src="qris.png" alt="QRIS LELEMUKU.COM" class="qris-img" onerror="this.style.display='none';document.getElementById('qrisFallback').style.display='block'">
+          <div id="qrisFallback" style="display:none;background:var(--bg-input);border:1px solid var(--border);border-radius:12px;padding:20px;font-size:13px;color:var(--text-muted)">
+            Gambar QRIS belum tersedia.<br>Upload file <strong>qris.png</strong> ke repository GitHub.
+          </div>
+          <div class="qris-merchant">Merchant: LELEMUKU.COM</div>
+          <div class="qris-note">GoPay · OVO · Dana · ShopeePay · BRI · BNI · Mandiri · BCA</div>
+        </div>
+
+        <div class="form-group" style="margin-top:16px">
+          <label>Upload Bukti Pembayaran <span class="req">*</span></label>
+          <div class="upload-area" id="uploadBuktiArea" onclick="document.getElementById('fileBukti').click()">
+            <input type="file" id="fileBukti" accept="image/*" onchange="handleFileUpload('fileBukti','uploadBuktiArea','buktiFilename','buktiBase64','buktiType')">
+            <div class="upload-icon">📸</div>
+            <div class="upload-text">Klik untuk upload <strong>Screenshot Bukti QRIS</strong></div>
+            <div class="upload-filename" id="buktiFilename"></div>
+          </div>
+          <div class="field-error" id="err-bukti">Wajib upload bukti pembayaran</div>
+        </div>
+      </div>
+
+      <button class="btn-submit" id="btnSubmit" onclick="submitForm()">
+        Kirim Pesanan →
+      </button>
+      <div class="btn-note">Pesanan akan diverifikasi tim IKKJ dalam 1x24 jam via WhatsApp</div>
+
+    </div><!-- end formWrapper -->
+  </div><!-- end tab-order -->
+
+  <!-- TAB: KALKULATOR -->
+  <div id="tab-harga" style="display:none">
+    <div class="card">
+      <div class="card-title">Kalkulator Harga Iklan</div>
+      <div class="card-sub">Pilih paket dan add-on — total harga langsung muncul.</div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Jenis Order</label>
+          <select id="kalcJenis">
+            <option value="satuan">Posting Satuan</option>
+            <option value="retainer">Retainer Bulanan</option>
+          </select>
+        </div>
+        <div class="durasi-wrap" id="kalcDurasiWrap">
+          <label>Durasi</label>
+          <select id="kalcDurasi">
+            <option value="1">1 Bulan</option>
+            <option value="3">3 Bulan</option>
+            <option value="6">6 Bulan</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:16px">
+        <label>Pilih Tier</label>
+        <select id="kalcTier">
+          <option value="basic">Basic — Facebook Group (400.000 anggota)</option>
+          <option value="duo">Duo — Facebook + Instagram</option>
+          <option value="triple">Triple — Facebook + Instagram + TikTok + YouTube bonus</option>
         </select>
       </div>
-      <div class="durasi-wrap" id="durasiWrap">
-        <label>Durasi Retainer</label>
-        <select id="durasi">
-          <option value="1">1 Bulan</option>
-          <option value="3">3 Bulan</option>
-          <option value="6">6 Bulan</option>
-        </select>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:10px">Add-On</div>
+      <div class="addon-grid">
+        <div class="addon-chip disabled" id="kalc-ig" onclick="toggleKalcAddon('ig')"><div class="dot"></div>Pin Instagram +Rp 150rb</div>
+        <div class="addon-chip disabled" id="kalc-tt" onclick="toggleKalcAddon('tt')"><div class="dot"></div>Pin TikTok +Rp 150rb</div>
+        <div class="addon-chip" id="kalc-lp" onclick="toggleKalcAddon('lp')"><div class="dot"></div>Laporan Engagement +Rp 50rb</div>
       </div>
-    </div>
-
-    <div class="form-group" style="margin-bottom:16px">
-      <label>Pilih Tier</label>
-      <select id="tier">
-        <option value="basic">Basic — Facebook Group (400.000 anggota)</option>
-        <option value="duo">Duo — Facebook + Instagram</option>
-        <option value="triple">Triple — Facebook + Instagram + TikTok + YouTube bonus</option>
-      </select>
-    </div>
-
-    <div class="addon-label">Add-On (opsional, bisa pilih lebih dari 1)</div>
-    <div class="addon-grid">
-      <div class="addon-chip disabled" id="chip-ig" onclick="toggleAddon('ig')">
-        <div class="dot"></div>
-        Pin Instagram 7 hari <span style="font-size:12px;margin-left:4px;color:var(--text-muted)">+Rp 150rb</span>
+      <div class="result-box" style="margin-top:16px">
+        <div class="result-rows" id="kalcRows"></div>
+        <div class="total-divider"></div>
+        <div class="total-row">
+          <div class="total-label">Total Bayar</div>
+          <div class="total-amount" id="kalcTotal">Rp 400.000</div>
+        </div>
+        <div id="kalcJatah"></div>
       </div>
-      <div class="addon-chip disabled" id="chip-tt" onclick="toggleAddon('tt')">
-        <div class="dot"></div>
-        Pin TikTok 7 hari <span style="font-size:12px;margin-left:4px;color:var(--text-muted)">+Rp 150rb</span>
-      </div>
-      <div class="addon-chip" id="chip-lp" onclick="toggleAddon('lp')">
-        <div class="dot"></div>
-        Laporan Engagement <span style="font-size:12px;margin-left:4px;color:var(--text-muted)">+Rp 50rb</span>
-      </div>
-    </div>
-
-    <div class="result-box">
-      <div class="result-rows" id="resultRows"></div>
-      <div class="total-divider"></div>
-      <div class="total-row">
-        <div class="total-label">Total Bayar</div>
-        <div class="total-amount" id="totalAmount">Rp 400.000</div>
-      </div>
-      <div id="jatahInfo"></div>
-    </div>
-
-    <a href="https://forms.gle/b7XfzqBBQYXEt8YYA" target="_blank" class="cta-btn">
-      Pesan Iklan Sekarang →
-    </a>
-    <div class="cta-note">Bayar via QRIS · Tayang dalam 1x24 jam · Merchant: LELEMUKU.COM</div>
-  </div>
-
-  <div class="section-title" style="margin-top:40px">Pilihan Paket</div>
-  <div class="tier-cards">
-    <div class="tier-card">
-      <div class="tier-name">Basic</div>
-      <div class="tier-reach">Facebook Group · 400.000 anggota</div>
-      <div class="tier-platform"><span class="ptag">Facebook</span></div>
-      <div class="tier-plabel">Satuan</div>
-      <div class="tier-pmain">Rp 400.000</div>
-      <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
-      <div class="tier-pret">Rp 2.500.000</div>
-    </div>
-    <div class="tier-card featured">
-      <div class="tier-name" style="color:var(--kuning)">Duo ⭐</div>
-      <div class="tier-reach">FB 400rb + Instagram 27rb followers</div>
-      <div class="tier-platform">
-        <span class="ptag">Facebook</span>
-        <span class="ptag">Instagram</span>
-      </div>
-      <div class="tier-plabel">Satuan</div>
-      <div class="tier-pmain">Rp 700.000</div>
-      <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
-      <div class="tier-pret">Rp 4.500.000</div>
-    </div>
-    <div class="tier-card">
-      <div class="tier-name">Triple</div>
-      <div class="tier-reach">FB + IG + TikTok 120rb followers</div>
-      <div class="tier-platform">
-        <span class="ptag">Facebook</span>
-        <span class="ptag">Instagram</span>
-        <span class="ptag">TikTok</span>
-        <span class="ptag bonus">YouTube ✦</span>
-      </div>
-      <div class="tier-plabel">Satuan</div>
-      <div class="tier-pmain">Rp 1.000.000</div>
-      <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
-      <div class="tier-pret">Rp 6.500.000</div>
+      <button class="btn-submit" onclick="switchTab('order')" style="margin-top:0">Pesan Sekarang →</button>
     </div>
   </div>
 
-  <div class="section-title" style="margin-top:40px">Syarat & Ketentuan</div>
-  <div class="calc-wrapper">
-    <div class="syarat-list">
-      <div class="syarat-item"><div class="syarat-icon">📁</div>Semua konten (foto, video, teks) wajib disiapkan klien dalam format siap tayang. IKKJ tidak menyediakan layanan produksi konten.</div>
-      <div class="syarat-item"><div class="syarat-icon">📐</div>Foto minimal resolusi 720px, video minimal 720p format MP4/MOV.</div>
-      <div class="syarat-item"><div class="syarat-icon">💳</div>Pembayaran 100% di muka via QRIS sebelum konten ditayangkan. Merchant: LELEMUKU.COM.</div>
-      <div class="syarat-item"><div class="syarat-icon">⏰</div>Konten tayang dalam 1x24 jam setelah pembayaran dan konten diterima.</div>
-      <div class="syarat-item"><div class="syarat-icon">📅</div>Retainer: periode berjalan sejak pembayaran diterima. Jatah posting tidak terpakai hangus di akhir periode.</div>
-      <div class="syarat-item"><div class="syarat-icon">📌</div>Slot pin IG dan TikTok terbatas (maks. 3 slot bersamaan). Booking lebih awal untuk mengamankan slot.</div>
-      <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: redaksi@lelemuku.com</div>
+  <!-- TAB: INFO -->
+  <div id="tab-info" style="display:none">
+    <div class="section-title">Pilihan Paket</div>
+    <div class="tier-cards">
+      <div class="tier-card">
+        <div class="tier-name">Basic</div>
+        <div class="tier-reach">Facebook Group · 400.000 anggota</div>
+        <div class="tier-platform"><span class="ptag">Facebook</span></div>
+        <div class="tier-plabel">Satuan</div>
+        <div class="tier-pmain">Rp 400.000</div>
+        <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
+        <div class="tier-pret">Rp 2.500.000</div>
+      </div>
+      <div class="tier-card featured">
+        <div class="tier-name" style="color:var(--kuning)">Duo ⭐</div>
+        <div class="tier-reach">FB 400rb + Instagram 27rb</div>
+        <div class="tier-platform"><span class="ptag">Facebook</span><span class="ptag">Instagram</span></div>
+        <div class="tier-plabel">Satuan</div>
+        <div class="tier-pmain">Rp 700.000</div>
+        <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
+        <div class="tier-pret">Rp 4.500.000</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Triple</div>
+        <div class="tier-reach">FB + IG + TikTok 120rb</div>
+        <div class="tier-platform"><span class="ptag">Facebook</span><span class="ptag">Instagram</span><span class="ptag">TikTok</span><span class="ptag bonus">YouTube ✦</span></div>
+        <div class="tier-plabel">Satuan</div>
+        <div class="tier-pmain">Rp 1.000.000</div>
+        <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
+        <div class="tier-pret">Rp 6.500.000</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="margin-top:32px">Syarat & Ketentuan</div>
+    <div class="card">
+      <div class="syarat-list">
+        <div class="syarat-item"><div class="syarat-icon">📁</div>Semua konten wajib disiapkan klien dalam format siap tayang. IKKJ tidak menyediakan jasa produksi konten.</div>
+        <div class="syarat-item"><div class="syarat-icon">📐</div>Foto minimal 720px, video minimal 720p format MP4/MOV. Maks. upload 10MB.</div>
+        <div class="syarat-item"><div class="syarat-icon">💳</div>Pembayaran 100% di muka via QRIS. Merchant: LELEMUKU.COM.</div>
+        <div class="syarat-item"><div class="syarat-icon">⏰</div>Konten tayang dalam 1x24 jam setelah pembayaran dan konten diterima.</div>
+        <div class="syarat-item"><div class="syarat-icon">📅</div>Retainer: periode berjalan sejak pembayaran diterima. Jatah tidak terpakai hangus di akhir periode. Jadwal posting disepakati bersama.</div>
+        <div class="syarat-item"><div class="syarat-icon">📌</div>Slot pin IG & TikTok terbatas (maks. 3 slot bersamaan). Booking lebih awal untuk mengamankan slot.</div>
+        <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: redaksi@lelemuku.com atau WA: 081234567890</div>
+      </div>
     </div>
   </div>
 
-</div>
+</div><!-- end container -->
 
 <script>
-// Semua kode JS di sini — setelah DOM siap
+var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzXQlkoMb3hlRBc-xAv4eVyEQTukeJ4erz60LRvNN8lK-gcmunC8PFrlojhfkG7Izek/exec";
 
 var HARGA = {
   satuan:   { basic: 400000, duo: 700000, triple: 1000000 },
   retainer: { basic: 2500000, duo: 4500000, triple: 6500000 },
   addonHarga: { ig: 150000, tt: 150000, lp: 50000 },
-  addonLabel: {
-    ig: "Pin Post Instagram 7 hari",
-    tt: "Pin Video TikTok 7 hari",
-    lp: "Laporan Engagement"
-  }
+  addonLabel: { ig: "Pin Instagram 7 hari", tt: "Pin TikTok 7 hari", lp: "Laporan Engagement" }
+};
+
+var ADDON_RULES = {
+  basic:  { ig: false, tt: false, lp: true },
+  duo:    { ig: true,  tt: false, lp: true },
+  triple: { ig: true,  tt: true,  lp: true }
 };
 
 var TIER_LABEL = {
@@ -248,52 +486,62 @@ var TIER_LABEL = {
   triple: "Triple (FB + IG + TikTok + YouTube)"
 };
 
-// Aturan addon per tier
-var ADDON_RULES = {
-  basic:  { ig: false, tt: false, lp: true },
-  duo:    { ig: true,  tt: false, lp: true },
-  triple: { ig: true,  tt: true,  lp: true }
-};
-
-var addons = { ig: false, tt: false, lp: false };
+var addons      = { ig: false, tt: false, lp: false };
+var kalcAddons  = { ig: false, tt: false, lp: false };
 var currentTheme = localStorage.getItem("ikkj-theme") || "dark";
+var kontenBase64 = null, kontenType = null;
+var buktiBase64  = null, buktiType  = null;
 
 // ---- THEME ----
-function applyTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  document.getElementById("themeIcon").textContent = theme === "dark" ? "☀️" : "🌙";
-  document.getElementById("themeText").textContent = theme === "dark" ? "Terang" : "Gelap";
-  localStorage.setItem("ikkj-theme", theme);
-  currentTheme = theme;
+function applyTheme(t) {
+  document.documentElement.setAttribute("data-theme", t);
+  document.getElementById("themeIcon").textContent = t === "dark" ? "☀️" : "🌙";
+  document.getElementById("themeText").textContent = t === "dark" ? "Terang" : "Gelap";
+  localStorage.setItem("ikkj-theme", t);
+  currentTheme = t;
 }
+function toggleTheme() { applyTheme(currentTheme === "dark" ? "light" : "dark"); }
 
-function toggleTheme() {
-  applyTheme(currentTheme === "dark" ? "light" : "dark");
+// ---- TABS ----
+function switchTab(tab) {
+  ["order","harga","info"].forEach(function(t) {
+    document.getElementById("tab-" + t).style.display = t === tab ? "block" : "none";
+  });
+  document.querySelectorAll(".tab").forEach(function(el, i) {
+    el.classList.toggle("active", ["order","harga","info"][i] === tab);
+  });
 }
 
 // ---- FORMAT ----
-function formatRp(n) {
-  return "Rp " + n.toLocaleString("id-ID");
+function formatRp(n) { return "Rp " + Number(n).toLocaleString("id-ID"); }
+
+// ---- DETECT TIER ----
+function detectTierKey(val) {
+  var v = val.toLowerCase();
+  if (v.indexOf("triple") !== -1) return "triple";
+  if (v.indexOf("duo") !== -1) return "duo";
+  return "basic";
 }
 
-// ---- ADDON TOGGLE ----
+// ---- ADDON ORDER FORM ----
 function toggleAddon(key) {
   var chip = document.getElementById("chip-" + key);
   if (!chip || chip.classList.contains("disabled")) return;
   addons[key] = !addons[key];
-  if (addons[key]) chip.classList.add("on");
-  else chip.classList.remove("on");
-  updateCalc();
+  chip.classList.toggle("on", addons[key]);
+  // Tampilkan/sembunyikan card tanggal pin
+  var hasPin = addons.ig || addons.tt;
+  document.getElementById("pinDateCard").style.display = hasPin ? "block" : "none";
+  updateOrderCalc();
 }
 
-// ---- UPDATE ADDON AVAILABILITY ----
-function updateAddonAvailability(tier) {
-  var rule = ADDON_RULES[tier] || ADDON_RULES.triple;
+function updateAddonChips(tier, prefix, addonObj) {
+  var rule = ADDON_RULES[tier] || ADDON_RULES.basic;
   for (var k in rule) {
-    var chip = document.getElementById("chip-" + k);
+    var chip = document.getElementById(prefix + k);
     if (!chip) continue;
     if (!rule[k]) {
-      addons[k] = false;
+      addonObj[k] = false;
       chip.classList.remove("on");
       chip.classList.add("disabled");
     } else {
@@ -302,30 +550,79 @@ function updateAddonAvailability(tier) {
   }
 }
 
-// ---- MAIN CALCULATOR ----
-function updateCalc() {
-  var jenis  = document.getElementById("jenisOrder").value;
-  var tier   = document.getElementById("tier").value;
-  var durasi = parseInt(document.getElementById("durasi").value) || 1;
-  var isRet  = jenis === "retainer";
+// ---- ORDER CALC ----
+function updateOrderCalc() {
+  var tierVal = document.getElementById("tier").value;
+  var jenisVal = document.getElementById("jenisOrder").value;
+  var durasi = document.getElementById("durasi").value;
+  var durasiNum = parseInt(durasi) || 1;
+  var tier = detectTierKey(tierVal);
+  var isRet = jenisVal === "retainer" || tierVal.indexOf("retainer") !== -1;
 
   // Durasi visibility
   var dw = document.getElementById("durasiWrap");
-  if (isRet) dw.classList.add("show");
-  else dw.classList.remove("show");
+  if (isRet) dw.classList.add("show"); else dw.classList.remove("show");
 
-  // Update addon chips
-  updateAddonAvailability(tier);
+  updateAddonChips(tier, "chip-", addons);
 
-  // Hitung harga
-  var total = 0;
-  var html  = "";
-
+  var total = 0, html = "";
   if (isRet) {
-    var perBulan = HARGA.retainer[tier];
-    var sub = perBulan * durasi;
+    var pb = HARGA.retainer[tier];
+    var sub = pb * durasiNum;
     total += sub;
-    html += '<div class="result-row"><span class="lbl">Retainer ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(perBulan) + '/bln</span></div>';
+    html += '<div class="result-row"><span class="lbl">Retainer ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(pb) + '/bln</span></div>';
+    html += '<div class="result-row sub"><span class="lbl">&times; ' + durasiNum + ' bulan</span><span class="val">' + formatRp(sub) + '</span></div>';
+  } else {
+    var hs = HARGA.satuan[tier];
+    total += hs;
+    html += '<div class="result-row"><span class="lbl">Posting Satuan ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(hs) + '</span></div>';
+  }
+
+  var ada = false;
+  for (var k in addons) {
+    if (addons[k]) {
+      ada = true;
+      total += HARGA.addonHarga[k];
+      html += '<div class="result-row"><span class="lbl">+ ' + HARGA.addonLabel[k] + '</span><span class="val">' + formatRp(HARGA.addonHarga[k]) + '</span></div>';
+    }
+  }
+  if (!ada) html += '<div class="result-row sub"><span class="lbl">Tidak ada add-on</span><span class="val">—</span></div>';
+
+  document.getElementById("orderResultRows").innerHTML = html;
+  document.getElementById("orderTotal").textContent = formatRp(total);
+
+  var jatah = "";
+  if (isRet) jatah = '<div class="jatah-badge">📅 Jatah: ' + (8 * durasiNum) + 'x posting (' + durasiNum + ' bln &times; 8x/bln)</div>';
+  document.getElementById("orderJatah").innerHTML = jatah;
+
+  return total;
+}
+
+// ---- KALKULATOR TAB ----
+function toggleKalcAddon(key) {
+  var chip = document.getElementById("kalc-" + key);
+  if (!chip || chip.classList.contains("disabled")) return;
+  kalcAddons[key] = !kalcAddons[key];
+  chip.classList.toggle("on", kalcAddons[key]);
+  updateKalc();
+}
+
+function updateKalc() {
+  var jenis = document.getElementById("kalcJenis").value;
+  var tier = document.getElementById("kalcTier").value;
+  var durasi = parseInt(document.getElementById("kalcDurasi").value) || 1;
+  var isRet = jenis === "retainer";
+
+  var kdw = document.getElementById("kalcDurasiWrap");
+  if (isRet) kdw.classList.add("show"); else kdw.classList.remove("show");
+
+  updateAddonChips(tier, "kalc-", kalcAddons);
+
+  var total = 0, html = "";
+  if (isRet) {
+    var pb = HARGA.retainer[tier], sub = pb * durasi;
+    total += sub;
+    html += '<div class="result-row"><span class="lbl">Retainer ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(pb) + '/bln</span></div>';
     html += '<div class="result-row sub"><span class="lbl">&times; ' + durasi + ' bulan</span><span class="val">' + formatRp(sub) + '</span></div>';
   } else {
     var hs = HARGA.satuan[tier];
@@ -333,37 +630,195 @@ function updateCalc() {
     html += '<div class="result-row"><span class="lbl">Posting Satuan ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(hs) + '</span></div>';
   }
 
-  var adaAddon = false;
-  for (var k in addons) {
-    if (addons[k]) {
-      adaAddon = true;
-      var h = HARGA.addonHarga[k];
-      total += h;
-      html += '<div class="result-row"><span class="lbl">+ ' + HARGA.addonLabel[k] + '</span><span class="val">' + formatRp(h) + '</span></div>';
+  var ada = false;
+  for (var k in kalcAddons) {
+    if (kalcAddons[k]) {
+      ada = true;
+      total += HARGA.addonHarga[k];
+      html += '<div class="result-row"><span class="lbl">+ ' + HARGA.addonLabel[k] + '</span><span class="val">' + formatRp(HARGA.addonHarga[k]) + '</span></div>';
     }
   }
-  if (!adaAddon) {
-    html += '<div class="result-row sub"><span class="lbl">Tidak ada add-on</span><span class="val">—</span></div>';
-  }
+  if (!ada) html += '<div class="result-row sub"><span class="lbl">Tidak ada add-on</span><span class="val">—</span></div>';
 
-  document.getElementById("resultRows").innerHTML = html;
-  document.getElementById("totalAmount").textContent = formatRp(total);
+  document.getElementById("kalcRows").innerHTML = html;
+  document.getElementById("kalcTotal").textContent = formatRp(total);
 
   var jatah = "";
-  if (isRet) {
-    jatah = '<div class="jatah-badge">📅 Jatah posting: ' + (8 * durasi) + 'x (' + durasi + ' bln &times; 8x/bln)</div>';
+  if (isRet) jatah = '<div class="jatah-badge">📅 Jatah: ' + (8 * durasi) + 'x posting</div>';
+  document.getElementById("kalcJatah").innerHTML = jatah;
+}
+
+// ---- FILE UPLOAD ----
+function handleFileUpload(inputId, areaId, nameId, b64Var, typeVar) {
+  var file = document.getElementById(inputId).files[0];
+  if (!file) return;
+  if (file.size > 10 * 1024 * 1024) {
+    alert("File terlalu besar (maks. 10MB). Upload ke Google Drive dan sertakan link di Catatan Tambahan.");
+    return;
   }
-  document.getElementById("jatahInfo").innerHTML = jatah;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var result = e.target.result;
+    var base64 = result.split(",")[1];
+    if (b64Var === "kontenBase64") { kontenBase64 = base64; kontenType = file.type; }
+    else { buktiBase64 = base64; buktiType = file.type; }
+    document.getElementById(nameId).textContent = "✓ " + file.name;
+    document.getElementById(areaId).classList.add("has-file");
+  };
+  reader.readAsDataURL(file);
+}
+
+// ---- VALIDATION ----
+function showErr(id, show) {
+  var el = document.getElementById("err-" + id);
+  var inp = document.getElementById(id);
+  if (!el || !inp) return;
+  el.style.display = show ? "block" : "none";
+  inp.classList.toggle("err", show);
+}
+
+function validateForm() {
+  var ok = true;
+  var nb = document.getElementById("namaBisnis").value.trim();
+  var np = document.getElementById("namaPIC").value.trim();
+  var wa = document.getElementById("whatsapp").value.trim();
+  var isi = document.getElementById("isiKonten").value.trim();
+  var tgl = document.getElementById("tanggalTayang").value;
+
+  showErr("namaBisnis", !nb); if (!nb) ok = false;
+  showErr("namaPIC", !np); if (!np) ok = false;
+
+  var waOk = /^0[0-9]{9,12}$/.test(wa);
+  showErr("whatsapp", !waOk); if (!waOk) ok = false;
+
+  showErr("isiKonten", !isi); if (!isi) ok = false;
+
+  var today = new Date(); today.setHours(0,0,0,0);
+  var tglDate = tgl ? new Date(tgl) : null;
+  var tglOk = tglDate && tglDate > today;
+  showErr("tanggalTayang", !tglOk); if (!tglOk) ok = false;
+
+  var buktiErr = document.getElementById("err-bukti");
+  if (!buktiBase64) {
+    buktiErr.style.display = "block";
+    document.getElementById("uploadBuktiArea").style.borderColor = "#E63946";
+    ok = false;
+  } else {
+    buktiErr.style.display = "none";
+    document.getElementById("uploadBuktiArea").style.borderColor = "";
+  }
+
+  return ok;
+}
+
+// ---- SUBMIT ----
+function submitForm() {
+  if (!validateForm()) {
+    document.getElementById("alertError").textContent = "Harap lengkapi semua field yang wajib diisi.";
+    document.getElementById("alertError").classList.add("show");
+    window.scrollTo({top: 0, behavior: "smooth"});
+    return;
+  }
+
+  document.getElementById("alertError").classList.remove("show");
+
+  var total = updateOrderCalc();
+  var tierVal = document.getElementById("tier").value;
+  var jenisVal = document.getElementById("jenisOrder").value;
+  var durasiVal = document.getElementById("durasi").value;
+
+  // Kumpulkan add-on
+  var addonList = [];
+  for (var k in addons) {
+    if (addons[k]) addonList.push(HARGA.addonLabel[k]);
+  }
+
+  var payload = {
+    namaBisnis:    document.getElementById("namaBisnis").value.trim(),
+    namaPIC:       document.getElementById("namaPIC").value.trim(),
+    whatsapp:      document.getElementById("whatsapp").value.trim(),
+    email:         document.getElementById("email").value.trim(),
+    jenisOrder:    jenisVal === "retainer" ? "Retainer Bulanan" : "Posting Satuan",
+    tier:          document.getElementById("tier").options[document.getElementById("tier").selectedIndex].text,
+    durasiRetainer: durasiVal,
+    jenisKonten:   document.getElementById("jenisKonten").value,
+    isiKonten:     document.getElementById("isiKonten").value.trim(),
+    tanggalTayang: document.getElementById("tanggalTayang").value,
+    catatan:       document.getElementById("catatan").value.trim(),
+    addon:         addonList.length > 0 ? addonList.join(", ") : "Tidak ada",
+    tanggalPin:    document.getElementById("tanggalPin").value || "-",
+    totalHarga:    total,
+    fileKonten:    kontenBase64 ? ("data:" + kontenType + ";base64," + kontenBase64) : "-",
+    buktiBayar:    buktiBase64 ? ("data:" + buktiType + ";base64," + buktiBase64) : "-"
+  };
+
+  // Disable tombol & tampilkan loading
+  var btn = document.getElementById("btnSubmit");
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Mengirim pesanan...';
+
+  fetch(WEBAPP_URL, {
+    method: "POST",
+    body: JSON.stringify(payload)
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.status === "ok") {
+      document.getElementById("formWrapper").style.display = "none";
+      document.getElementById("successState").classList.add("show");
+      window.scrollTo({top: 0, behavior: "smooth"});
+    } else {
+      throw new Error(data.message || "Terjadi kesalahan");
+    }
+  })
+  .catch(function(err) {
+    btn.disabled = false;
+    btn.innerHTML = "Kirim Pesanan →";
+    document.getElementById("alertError").textContent = "Gagal mengirim: " + err.message + ". Coba lagi atau hubungi redaksi@lelemuku.com";
+    document.getElementById("alertError").classList.add("show");
+    window.scrollTo({top: 0, behavior: "smooth"});
+  });
+}
+
+// ---- RESET ----
+function resetForm() {
+  document.getElementById("formWrapper").style.display = "block";
+  document.getElementById("successState").classList.remove("show");
+  document.getElementById("btnSubmit").disabled = false;
+  document.getElementById("btnSubmit").innerHTML = "Kirim Pesanan →";
+  kontenBase64 = null; buktiBase64 = null;
+  addons = { ig: false, tt: false, lp: false };
+  ["chip-ig","chip-tt","chip-lp"].forEach(function(id) {
+    var c = document.getElementById(id);
+    if (c) c.classList.remove("on");
+  });
+}
+
+// ---- SET MIN DATE ----
+function setMinDate() {
+  var tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  var y = tomorrow.getFullYear();
+  var m = String(tomorrow.getMonth() + 1).padStart(2, "0");
+  var d = String(tomorrow.getDate()).padStart(2, "0");
+  var min = y + "-" + m + "-" + d;
+  document.getElementById("tanggalTayang").min = min;
+  document.getElementById("tanggalPin").min = min;
 }
 
 // ---- EVENT LISTENERS ----
-document.getElementById("jenisOrder").addEventListener("change", updateCalc);
-document.getElementById("durasi").addEventListener("change", updateCalc);
-document.getElementById("tier").addEventListener("change", updateCalc);
+document.getElementById("jenisOrder").addEventListener("change", updateOrderCalc);
+document.getElementById("durasi").addEventListener("change", updateOrderCalc);
+document.getElementById("tier").addEventListener("change", updateOrderCalc);
+document.getElementById("kalcJenis").addEventListener("change", updateKalc);
+document.getElementById("kalcDurasi").addEventListener("change", updateKalc);
+document.getElementById("kalcTier").addEventListener("change", updateKalc);
 
 // ---- INIT ----
 applyTheme(currentTheme);
-updateCalc();
+setMinDate();
+updateOrderCalc();
+updateKalc();
 </script>
 </body>
 </html>
