@@ -6,589 +6,97 @@
 <title>Pasang Iklan di IKKJ | Lelemuku.com</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --kuning: #FFB703;
-    --kuning-hover: #FFC933;
-  }
-
-  /* DARK MODE */
-  [data-theme="dark"] {
-    --bg: #0D1B2A;
-    --bg-card: rgba(255,255,255,0.04);
-    --bg-card-hover: rgba(255,255,255,0.07);
-    --bg-result: linear-gradient(135deg, rgba(29,53,87,0.6), rgba(13,27,42,0.8));
-    --border: rgba(255,255,255,0.08);
-    --border-hover: rgba(255,183,3,0.4);
-    --border-result: rgba(69,123,157,0.4);
-    --text-primary: #F8F9FA;
-    --text-secondary: rgba(248,249,250,0.65);
-    --text-muted: rgba(255,255,255,0.4);
-    --text-label: rgba(255,255,255,0.45);
-    --text-section: #457B9D;
-    --select-bg: rgba(255,255,255,0.06);
-    --select-border: rgba(255,255,255,0.12);
-    --select-option: #1a2a3a;
-    --addon-bg: rgba(255,255,255,0.05);
-    --addon-on-bg: rgba(255,183,3,0.12);
-    --addon-on-border: rgba(255,183,3,0.5);
-    --stat-bg: rgba(255,255,255,0.06);
-    --stat-border: rgba(255,255,255,0.1);
-    --divider: rgba(255,255,255,0.1);
-    --syarat-icon-bg: rgba(69,123,157,0.2);
-    --jatah-bg: rgba(69,123,157,0.2);
-    --jatah-border: rgba(69,123,157,0.4);
-    --jatah-color: #A8DAFF;
-    --hero-glow: rgba(69,123,157,0.25);
-    --toggle-bg: rgba(255,255,255,0.08);
-    --toggle-border: rgba(255,255,255,0.15);
-    --featured-bg: rgba(255,183,3,0.05);
-    --featured-border: rgba(255,183,3,0.35);
-    --section-line: rgba(255,255,255,0.08);
-  }
-
-  /* LIGHT MODE */
-  [data-theme="light"] {
-    --bg: #F0F4F8;
-    --bg-card: #FFFFFF;
-    --bg-card-hover: #F8FBFF;
-    --bg-result: linear-gradient(135deg, #E8F0FE, #F0F7FF);
-    --border: rgba(0,0,0,0.08);
-    --border-hover: rgba(255,183,3,0.6);
-    --border-result: rgba(29,53,87,0.2);
-    --text-primary: #0D1B2A;
-    --text-secondary: rgba(13,27,42,0.7);
-    --text-muted: rgba(13,27,42,0.45);
-    --text-label: rgba(13,27,42,0.5);
-    --text-section: #1D3557;
-    --select-bg: #FFFFFF;
-    --select-border: rgba(0,0,0,0.12);
-    --select-option: #FFFFFF;
-    --addon-bg: #F8F9FA;
-    --addon-on-bg: rgba(255,183,3,0.1);
-    --addon-on-border: rgba(255,183,3,0.6);
-    --stat-bg: #FFFFFF;
-    --stat-border: rgba(0,0,0,0.08);
-    --divider: rgba(0,0,0,0.08);
-    --syarat-icon-bg: rgba(29,53,87,0.08);
-    --jatah-bg: rgba(29,53,87,0.06);
-    --jatah-border: rgba(29,53,87,0.15);
-    --jatah-color: #1D3557;
-    --hero-glow: rgba(29,53,87,0.08);
-    --toggle-bg: rgba(0,0,0,0.05);
-    --toggle-border: rgba(0,0,0,0.1);
-    --featured-bg: rgba(255,183,3,0.05);
-    --featured-border: rgba(255,183,3,0.5);
-    --section-line: rgba(0,0,0,0.06);
-  }
-
-  body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text-primary);
-    min-height: 100vh;
-    overflow-x: hidden;
-    transition: background 0.3s, color 0.3s;
-  }
-
-  /* THEME TOGGLE */
-  .theme-toggle {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--toggle-bg);
-    border: 1px solid var(--toggle-border);
-    border-radius: 100px;
-    padding: 6px 12px;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--text-primary);
-    transition: all 0.2s;
-    backdrop-filter: blur(10px);
-  }
-
-  .theme-toggle:hover {
-    border-color: var(--kuning);
-    color: var(--kuning);
-  }
-
-  .theme-toggle .icon {
-    font-size: 14px;
-    transition: transform 0.3s;
-  }
-
-  .theme-toggle:hover .icon {
-    transform: rotate(20deg);
-  }
-
-  /* HERO */
-  .hero {
-    position: relative;
-    padding: 80px 24px 60px;
-    text-align: center;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -100px; left: 50%;
-    transform: translateX(-50%);
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, var(--hero-glow) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(255,183,3,0.15);
-    border: 1px solid rgba(255,183,3,0.4);
-    color: var(--kuning);
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 100px;
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-family: 'Sora', sans-serif;
-    font-size: clamp(24px, 5vw, 48px);
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 16px;
-    color: var(--text-primary);
-  }
-
-  .hero h1 span { color: var(--kuning); }
-
-  .hero p {
-    font-size: 16px;
-    color: var(--text-secondary);
-    max-width: 520px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
-  }
-
-  .stats {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
-  }
-
-  .stat-pill {
-    background: var(--stat-bg);
-    border: 1px solid var(--stat-border);
-    border-radius: 100px;
-    padding: 8px 16px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: background 0.3s;
-  }
-
-  .stat-pill strong { color: var(--kuning); }
-
-  /* CONTAINER */
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px 80px;
-  }
-
-  .section-title {
-    font-family: 'Sora', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-section);
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--section-line);
-  }
-
-  /* KALKULATOR */
-  .calc-wrapper {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 16px;
-    transition: background 0.3s, border-color 0.3s;
-  }
-
-  .calc-title {
-    font-family: 'Sora', sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: var(--text-primary);
-  }
-
-  .calc-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-  }
-
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-
-  @media (max-width: 500px) {
-    .form-row { grid-template-columns: 1fr; }
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .form-group label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-label);
-  }
-
-  .form-group select {
-    background: var(--select-bg);
-    border: 1px solid var(--select-border);
-    border-radius: 10px;
-    color: var(--text-primary);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 14px;
-    padding: 11px 36px 11px 14px;
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.3s;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 14px center;
-    background-color: var(--select-bg);
-  }
-
-  .form-group select:focus {
-    outline: none;
-    border-color: var(--kuning);
-  }
-
-  .form-group select option {
-    background: var(--select-option);
-    color: #0D1B2A;
-  }
-
-  /* ADDON */
-  .addon-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-label);
-    margin-bottom: 10px;
-  }
-
-  .addon-grid {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
-
-  .addon-chip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--addon-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 9px 14px;
-    font-size: 13px;
-    cursor: pointer;
-    transition: all 0.18s;
-    user-select: none;
-    color: var(--text-primary);
-  }
-
-  .addon-chip:hover { border-color: var(--border-hover); }
-
-  .addon-chip.on {
-    background: var(--addon-on-bg);
-    border-color: var(--addon-on-border);
-    color: var(--kuning);
-  }
-
-  .addon-chip .dot {
-    width: 16px; height: 16px;
-    border-radius: 50%;
-    border: 1.5px solid var(--text-muted);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.18s;
-  }
-
-  .addon-chip.on .dot {
-    background: var(--kuning);
-    border-color: var(--kuning);
-  }
-
-  .addon-chip.on .dot::after {
-    content: '✓';
-    font-size: 10px;
-    color: #0D1B2A;
-    font-weight: 700;
-  }
-
-  /* RESULT */
-  .result-box {
-    background: var(--bg-result);
-    border: 1px solid var(--border-result);
-    border-radius: 14px;
-    padding: 20px 22px;
-    margin-bottom: 20px;
-    transition: all 0.3s;
-  }
-
-  .result-rows {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .result-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 13px;
-  }
-
-  .result-row .label { color: var(--text-secondary); flex: 1; }
-  .result-row .val { font-weight: 500; color: var(--text-primary); text-align: right; }
-  .result-row.sub { padding-left: 14px; }
-  .result-row.sub .label { font-size: 12px; color: var(--text-muted); }
-  .result-row.sub .val { font-size: 12px; color: var(--text-muted); }
-
-  .total-divider {
-    height: 1px;
-    background: var(--divider);
-    margin: 12px 0;
-  }
-
-  .total-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .total-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-  }
-
-  .total-amount {
-    font-family: 'Sora', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--kuning);
-  }
-
-  .jatah-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--jatah-bg);
-    border: 1px solid var(--jatah-border);
-    border-radius: 100px;
-    padding: 4px 12px;
-    font-size: 12px;
-    color: var(--jatah-color);
-    margin-top: 10px;
-  }
-
-  /* CTA */
-  .cta-btn {
-    display: block;
-    width: 100%;
-    background: var(--kuning);
-    color: #0D1B2A;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    padding: 16px;
-    border-radius: 12px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 0.02em;
-  }
-
-  .cta-btn:hover {
-    background: var(--kuning-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(255,183,3,0.3);
-  }
-
-  .cta-note {
-    text-align: center;
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 10px;
-  }
-
-  /* TIER CARDS */
-  .tier-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-top: 16px;
-  }
-
-  @media (max-width: 600px) {
-    .tier-cards { grid-template-columns: 1fr; }
-  }
-
-  .tier-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px;
-    transition: background 0.3s, border-color 0.3s;
-  }
-
-  .tier-card.featured {
-    border-color: var(--featured-border);
-    background: var(--featured-bg);
-  }
-
-  .tier-name {
-    font-family: 'Sora', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 4px;
-    color: var(--text-primary);
-  }
-
-  .tier-reach {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-  }
-
-  .tier-platform {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin-bottom: 12px;
-  }
-
-  .platform-tag {
-    font-size: 10px;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 100px;
-    background: var(--addon-bg);
-    color: var(--text-secondary);
-    border: 1px solid var(--border);
-  }
-
-  .platform-tag.bonus {
-    background: rgba(255,183,3,0.12);
-    color: var(--kuning);
-    border-color: rgba(255,183,3,0.3);
-  }
-
-  .tier-price-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-bottom: 2px;
-  }
-
-  .tier-price-main {
-    font-family: 'Sora', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
-
-  .tier-price-retainer {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  /* SYARAT */
-  .syarat-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 16px;
-  }
-
-  .syarat-item {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
-
-  .syarat-icon {
-    width: 20px; height: 20px; min-width: 20px;
-    border-radius: 50%;
-    background: var(--syarat-icon-bg);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px;
-    margin-top: 1px;
-  }
-
-  .durasi-wrap { display: none; }
-  .durasi-wrap.show {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--kuning:#FFB703;--kuning-hover:#FFC933}
+[data-theme="dark"]{--bg:#0D1B2A;--bg-card:rgba(255,255,255,0.04);--bg-result:linear-gradient(135deg,rgba(29,53,87,0.6),rgba(13,27,42,0.8));--border:rgba(255,255,255,0.08);--border-result:rgba(69,123,157,0.4);--text-primary:#F8F9FA;--text-secondary:rgba(248,249,250,0.65);--text-muted:rgba(255,255,255,0.4);--text-label:rgba(255,255,255,0.45);--text-section:#457B9D;--select-bg:rgba(255,255,255,0.06);--select-border:rgba(255,255,255,0.12);--addon-bg:rgba(255,255,255,0.05);--addon-on-bg:rgba(255,183,3,0.12);--addon-on-border:rgba(255,183,3,0.5);--stat-bg:rgba(255,255,255,0.06);--stat-border:rgba(255,255,255,0.1);--divider:rgba(255,255,255,0.1);--syarat-bg:rgba(69,123,157,0.2);--jatah-bg:rgba(69,123,157,0.2);--jatah-border:rgba(69,123,157,0.4);--jatah-color:#A8DAFF;--hero-glow:rgba(69,123,157,0.25);--toggle-bg:rgba(255,255,255,0.08);--toggle-border:rgba(255,255,255,0.15);--featured-bg:rgba(255,183,3,0.05);--featured-border:rgba(255,183,3,0.35);--section-line:rgba(255,255,255,0.08);--platform-bg:rgba(255,255,255,0.08);--platform-color:rgba(255,255,255,0.6)}
+[data-theme="light"]{--bg:#F0F4F8;--bg-card:#FFFFFF;--bg-result:linear-gradient(135deg,#E8F0FE,#F0F7FF);--border:rgba(0,0,0,0.08);--border-result:rgba(29,53,87,0.2);--text-primary:#0D1B2A;--text-secondary:rgba(13,27,42,0.7);--text-muted:rgba(13,27,42,0.45);--text-label:rgba(13,27,42,0.5);--text-section:#1D3557;--select-bg:#FFFFFF;--select-border:rgba(0,0,0,0.12);--addon-bg:#F8F9FA;--addon-on-bg:rgba(255,183,3,0.1);--addon-on-border:rgba(255,183,3,0.6);--stat-bg:#FFFFFF;--stat-border:rgba(0,0,0,0.08);--divider:rgba(0,0,0,0.08);--syarat-bg:rgba(29,53,87,0.08);--jatah-bg:rgba(29,53,87,0.06);--jatah-border:rgba(29,53,87,0.15);--jatah-color:#1D3557;--hero-glow:rgba(29,53,87,0.08);--toggle-bg:rgba(0,0,0,0.05);--toggle-border:rgba(0,0,0,0.1);--featured-bg:rgba(255,183,3,0.05);--featured-border:rgba(255,183,3,0.5);--section-line:rgba(0,0,0,0.06);--platform-bg:rgba(0,0,0,0.06);--platform-color:rgba(13,27,42,0.6)}
+
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text-primary);min-height:100vh;overflow-x:hidden;transition:background .3s,color .3s}
+
+.theme-toggle{position:fixed;top:16px;right:16px;z-index:100;display:flex;align-items:center;gap:8px;background:var(--toggle-bg);border:1px solid var(--toggle-border);border-radius:100px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;color:var(--text-primary);font-family:'Plus Jakarta Sans',sans-serif;transition:all .2s;backdrop-filter:blur(10px)}
+.theme-toggle:hover{border-color:var(--kuning);color:var(--kuning)}
+
+.hero{position:relative;padding:80px 24px 60px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--hero-glow) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-block;background:rgba(255,183,3,0.15);border:1px solid rgba(255,183,3,0.4);color:var(--kuning);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.hero h1{font-family:'Sora',sans-serif;font-size:clamp(24px,5vw,48px);font-weight:700;line-height:1.15;margin-bottom:16px;color:var(--text-primary)}
+.hero h1 span{color:var(--kuning)}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:520px;margin:0 auto 32px;line-height:1.7}
+.stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.stat-pill{background:var(--stat-bg);border:1px solid var(--stat-border);border-radius:100px;padding:8px 16px;font-size:13px;font-weight:500;color:var(--text-primary);transition:background .3s}
+.stat-pill strong{color:var(--kuning)}
+
+.container{max-width:900px;margin:0 auto;padding:0 20px 80px}
+.section-title{font-family:'Sora',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-section);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--section-line)}
+
+.calc-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-bottom:16px;transition:background .3s,border-color .3s}
+.calc-title{font-family:'Sora',sans-serif;font-size:18px;font-weight:600;margin-bottom:6px;color:var(--text-primary)}
+.calc-sub{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:500px){.form-row{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-label)}
+.form-group select{background:var(--select-bg);border:1px solid var(--select-border);border-radius:10px;color:var(--text-primary);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px;padding:11px 36px 11px 14px;cursor:pointer;transition:border-color .2s,background .3s;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:var(--select-bg)}
+.form-group select:focus{outline:none;border-color:var(--kuning)}
+
+.addon-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-label);margin-bottom:10px}
+.addon-grid{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.addon-chip{display:flex;align-items:center;gap:8px;background:var(--addon-bg);border:1px solid var(--border);border-radius:10px;padding:9px 14px;font-size:13px;cursor:pointer;transition:all .18s;user-select:none;color:var(--text-primary)}
+.addon-chip:hover:not(.disabled){border-color:var(--kuning)}
+.addon-chip.on{background:var(--addon-on-bg);border-color:var(--addon-on-border);color:var(--kuning)}
+.addon-chip.disabled{opacity:.3;pointer-events:none;cursor:not-allowed}
+.dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--text-muted);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s}
+.addon-chip.on .dot{background:var(--kuning);border-color:var(--kuning)}
+.addon-chip.on .dot::after{content:'✓';font-size:10px;color:#0D1B2A;font-weight:700}
+
+.result-box{background:var(--bg-result);border:1px solid var(--border-result);border-radius:14px;padding:20px 22px;margin-bottom:20px;transition:all .3s}
+.result-rows{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.result-row{display:flex;justify-content:space-between;align-items:flex-start;font-size:13px}
+.result-row .lbl{color:var(--text-secondary);flex:1}
+.result-row .val{font-weight:500;color:var(--text-primary);text-align:right}
+.result-row.sub{padding-left:14px}
+.result-row.sub .lbl{font-size:12px;color:var(--text-muted)}
+.result-row.sub .val{font-size:12px;color:var(--text-muted)}
+.total-divider{height:1px;background:var(--divider);margin:12px 0}
+.total-row{display:flex;justify-content:space-between;align-items:center}
+.total-label{font-size:13px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.08em}
+.total-amount{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;color:var(--kuning)}
+.jatah-badge{display:inline-flex;align-items:center;gap:6px;background:var(--jatah-bg);border:1px solid var(--jatah-border);border-radius:100px;padding:4px 12px;font-size:12px;color:var(--jatah-color);margin-top:10px}
+
+.cta-btn{display:block;width:100%;background:var(--kuning);color:#0D1B2A;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;text-align:center;padding:16px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.cta-btn:hover{background:var(--kuning-hover);transform:translateY(-1px);box-shadow:0 8px 24px rgba(255,183,3,.3)}
+.cta-note{text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px}
+
+.tier-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+@media(max-width:600px){.tier-cards{grid-template-columns:1fr}}
+.tier-card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:18px;transition:background .3s,border-color .3s}
+.tier-card.featured{border-color:var(--featured-border);background:var(--featured-bg)}
+.tier-name{font-family:'Sora',sans-serif;font-size:16px;font-weight:700;margin-bottom:4px;color:var(--text-primary)}
+.tier-reach{font-size:11px;color:var(--text-muted);margin-bottom:12px}
+.tier-platform{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+.ptag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:100px;background:var(--platform-bg);color:var(--platform-color);border:1px solid var(--border)}
+.ptag.bonus{background:rgba(255,183,3,.12);color:var(--kuning);border-color:rgba(255,183,3,.3)}
+.tier-plabel{font-size:12px;color:var(--text-muted);margin-bottom:2px}
+.tier-pmain{font-family:'Sora',sans-serif;font-size:20px;font-weight:700;color:var(--text-primary)}
+.tier-pret{font-size:15px;font-weight:600;color:var(--text-primary)}
+
+.syarat-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.syarat-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text-secondary);line-height:1.5}
+.syarat-icon{width:20px;height:20px;min-width:20px;border-radius:50%;background:var(--syarat-bg);display:flex;align-items:center;justify-content:center;font-size:10px;margin-top:1px}
+
+.durasi-wrap{display:none}
+.durasi-wrap.show{display:flex;flex-direction:column;gap:6px}
 </style>
 </head>
 <body>
 
-<!-- THEME TOGGLE -->
-<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
-  <span class="icon" id="themeIcon">☀️</span>
+<button class="theme-toggle" id="themeBtn" onclick="toggleTheme()">
+  <span id="themeIcon">☀️</span>
   <span id="themeText">Terang</span>
 </button>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-badge">Info Kejadian Terpercaya di Papua sejak 2009</div>
   <h1>Iklankan Bisnis Kamu<br>di <span>Info Kejadian Kota Jayapura | IKKJ</span></h1>
@@ -600,11 +108,9 @@
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="container">
 
   <div class="section-title">Kalkulator Harga Iklan</div>
-
   <div class="calc-wrapper">
     <div class="calc-title">Hitung Total Sebelum Pesan</div>
     <div class="calc-sub">Pilih paket dan add-on — total harga langsung muncul di bawah.</div>
@@ -612,14 +118,14 @@
     <div class="form-row">
       <div class="form-group">
         <label>Jenis Order</label>
-        <select id="jenisOrder" onchange="updateCalc()">
+        <select id="jenisOrder">
           <option value="satuan">Posting Satuan</option>
           <option value="retainer">Retainer Bulanan</option>
         </select>
       </div>
       <div class="durasi-wrap" id="durasiWrap">
         <label>Durasi Retainer</label>
-        <select id="durasi" onchange="updateCalc()">
+        <select id="durasi">
           <option value="1">1 Bulan</option>
           <option value="3">3 Bulan</option>
           <option value="6">6 Bulan</option>
@@ -627,9 +133,9 @@
       </div>
     </div>
 
-    <div class="form-group" style="margin-bottom:16px;">
+    <div class="form-group" style="margin-bottom:16px">
       <label>Pilih Tier</label>
-      <select id="tier" onchange="updateCalc()">
+      <select id="tier">
         <option value="basic">Basic — Facebook Group (400.000 anggota)</option>
         <option value="duo">Duo — Facebook + Instagram</option>
         <option value="triple">Triple — Facebook + Instagram + TikTok + YouTube bonus</option>
@@ -638,17 +144,17 @@
 
     <div class="addon-label">Add-On (opsional, bisa pilih lebih dari 1)</div>
     <div class="addon-grid">
-      <div class="addon-chip" id="chip-ig" onclick="toggleAddon('ig')">
+      <div class="addon-chip disabled" id="chip-ig" onclick="toggleAddon('ig')">
         <div class="dot"></div>
-        Pin Instagram 7 hari <span style="color:var(--text-muted); font-size:12px; margin-left:4px;">+Rp 150rb</span>
+        Pin Instagram 7 hari <span style="font-size:12px;margin-left:4px;color:var(--text-muted)">+Rp 150rb</span>
       </div>
-      <div class="addon-chip" id="chip-tt" onclick="toggleAddon('tt')">
+      <div class="addon-chip disabled" id="chip-tt" onclick="toggleAddon('tt')">
         <div class="dot"></div>
-        Pin TikTok 7 hari <span style="color:var(--text-muted); font-size:12px; margin-left:4px;">+Rp 150rb</span>
+        Pin TikTok 7 hari <span style="font-size:12px;margin-left:4px;color:var(--text-muted)">+Rp 150rb</span>
       </div>
       <div class="addon-chip" id="chip-lp" onclick="toggleAddon('lp')">
         <div class="dot"></div>
-        Laporan Engagement <span style="color:var(--text-muted); font-size:12px; margin-left:4px;">+Rp 50rb</span>
+        Laporan Engagement <span style="font-size:12px;margin-left:4px;color:var(--text-muted)">+Rp 50rb</span>
       </div>
     </div>
 
@@ -657,7 +163,7 @@
       <div class="total-divider"></div>
       <div class="total-row">
         <div class="total-label">Total Bayar</div>
-        <div class="total-amount" id="totalAmount">Rp 0</div>
+        <div class="total-amount" id="totalAmount">Rp 400.000</div>
       </div>
       <div id="jatahInfo"></div>
     </div>
@@ -668,171 +174,163 @@
     <div class="cta-note">Bayar via QRIS · Tayang dalam 1x24 jam · Merchant: LELEMUKU.COM</div>
   </div>
 
-  <!-- TIER CARDS -->
-  <div class="section-title" style="margin-top:40px;">Pilihan Paket</div>
+  <div class="section-title" style="margin-top:40px">Pilihan Paket</div>
   <div class="tier-cards">
     <div class="tier-card">
       <div class="tier-name">Basic</div>
       <div class="tier-reach">Facebook Group · 400.000 anggota</div>
-      <div class="tier-platform"><span class="platform-tag">Facebook</span></div>
-      <div class="tier-price-label">Satuan</div>
-      <div class="tier-price-main">Rp 400.000</div>
-      <div class="tier-price-label" style="margin-top:10px;">Retainer / bulan</div>
-      <div class="tier-price-retainer">Rp 2.500.000</div>
+      <div class="tier-platform"><span class="ptag">Facebook</span></div>
+      <div class="tier-plabel">Satuan</div>
+      <div class="tier-pmain">Rp 400.000</div>
+      <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
+      <div class="tier-pret">Rp 2.500.000</div>
     </div>
     <div class="tier-card featured">
-      <div class="tier-name" style="color:var(--kuning);">Duo ⭐</div>
-      <div class="tier-reach">FB · 400rb + IG · 27rb followers</div>
+      <div class="tier-name" style="color:var(--kuning)">Duo ⭐</div>
+      <div class="tier-reach">FB 400rb + Instagram 27rb followers</div>
       <div class="tier-platform">
-        <span class="platform-tag">Facebook</span>
-        <span class="platform-tag">Instagram</span>
+        <span class="ptag">Facebook</span>
+        <span class="ptag">Instagram</span>
       </div>
-      <div class="tier-price-label">Satuan</div>
-      <div class="tier-price-main">Rp 700.000</div>
-      <div class="tier-price-label" style="margin-top:10px;">Retainer / bulan</div>
-      <div class="tier-price-retainer">Rp 4.500.000</div>
+      <div class="tier-plabel">Satuan</div>
+      <div class="tier-pmain">Rp 700.000</div>
+      <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
+      <div class="tier-pret">Rp 4.500.000</div>
     </div>
     <div class="tier-card">
       <div class="tier-name">Triple</div>
-      <div class="tier-reach">FB + IG + TikTok · 120rb followers</div>
+      <div class="tier-reach">FB + IG + TikTok 120rb followers</div>
       <div class="tier-platform">
-        <span class="platform-tag">Facebook</span>
-        <span class="platform-tag">Instagram</span>
-        <span class="platform-tag">TikTok</span>
-        <span class="platform-tag bonus">YouTube ✦</span>
+        <span class="ptag">Facebook</span>
+        <span class="ptag">Instagram</span>
+        <span class="ptag">TikTok</span>
+        <span class="ptag bonus">YouTube ✦</span>
       </div>
-      <div class="tier-price-label">Satuan</div>
-      <div class="tier-price-main">Rp 1.000.000</div>
-      <div class="tier-price-label" style="margin-top:10px;">Retainer / bulan</div>
-      <div class="tier-price-retainer">Rp 6.500.000</div>
+      <div class="tier-plabel">Satuan</div>
+      <div class="tier-pmain">Rp 1.000.000</div>
+      <div class="tier-plabel" style="margin-top:10px">Retainer / bulan</div>
+      <div class="tier-pret">Rp 6.500.000</div>
     </div>
   </div>
 
-  <!-- SYARAT -->
-  <div class="section-title" style="margin-top:40px;">Syarat & Ketentuan</div>
+  <div class="section-title" style="margin-top:40px">Syarat & Ketentuan</div>
   <div class="calc-wrapper">
     <div class="syarat-list">
-      <div class="syarat-item"><div class="syarat-icon">📁</div>Semua konten (foto, video, teks) wajib disiapkan oleh klien dalam format siap tayang. IKKJ tidak menyediakan layanan produksi konten.</div>
+      <div class="syarat-item"><div class="syarat-icon">📁</div>Semua konten (foto, video, teks) wajib disiapkan klien dalam format siap tayang. IKKJ tidak menyediakan layanan produksi konten.</div>
       <div class="syarat-item"><div class="syarat-icon">📐</div>Foto minimal resolusi 720px, video minimal 720p format MP4/MOV.</div>
       <div class="syarat-item"><div class="syarat-icon">💳</div>Pembayaran 100% di muka via QRIS sebelum konten ditayangkan. Merchant: LELEMUKU.COM.</div>
       <div class="syarat-item"><div class="syarat-icon">⏰</div>Konten tayang dalam 1x24 jam setelah pembayaran dan konten diterima.</div>
       <div class="syarat-item"><div class="syarat-icon">📅</div>Retainer: periode berjalan sejak pembayaran diterima. Jatah posting tidak terpakai hangus di akhir periode.</div>
       <div class="syarat-item"><div class="syarat-icon">📌</div>Slot pin IG dan TikTok terbatas (maks. 3 slot bersamaan). Booking lebih awal untuk mengamankan slot.</div>
-      <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="44362120252f372d042821282129312f316a272b29">[email&#160;protected]</a></div>
+      <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: redaksi@lelemuku.com</div>
     </div>
   </div>
 
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// THEME TOGGLE
-var currentTheme = localStorage.getItem('ikkj-theme') || 'dark';
+<script>
+// Semua kode JS di sini — setelah DOM siap
 
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  var icon = document.getElementById('themeIcon');
-  var text = document.getElementById('themeText');
-  if (theme === 'dark') {
-    icon.textContent = '☀️';
-    text.textContent = 'Terang';
-  } else {
-    icon.textContent = '🌙';
-    text.textContent = 'Gelap';
+var HARGA = {
+  satuan:   { basic: 400000, duo: 700000, triple: 1000000 },
+  retainer: { basic: 2500000, duo: 4500000, triple: 6500000 },
+  addonHarga: { ig: 150000, tt: 150000, lp: 50000 },
+  addonLabel: {
+    ig: "Pin Post Instagram 7 hari",
+    tt: "Pin Video TikTok 7 hari",
+    lp: "Laporan Engagement"
   }
-  localStorage.setItem('ikkj-theme', theme);
+};
+
+var TIER_LABEL = {
+  basic:  "Basic (Facebook Group)",
+  duo:    "Duo (Facebook + Instagram)",
+  triple: "Triple (FB + IG + TikTok + YouTube)"
+};
+
+// Aturan addon per tier
+var ADDON_RULES = {
+  basic:  { ig: false, tt: false, lp: true },
+  duo:    { ig: true,  tt: false, lp: true },
+  triple: { ig: true,  tt: true,  lp: true }
+};
+
+var addons = { ig: false, tt: false, lp: false };
+var currentTheme = localStorage.getItem("ikkj-theme") || "dark";
+
+// ---- THEME ----
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  document.getElementById("themeIcon").textContent = theme === "dark" ? "☀️" : "🌙";
+  document.getElementById("themeText").textContent = theme === "dark" ? "Terang" : "Gelap";
+  localStorage.setItem("ikkj-theme", theme);
   currentTheme = theme;
 }
 
 function toggleTheme() {
-  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
 }
 
-applyTheme(currentTheme);
+// ---- FORMAT ----
+function formatRp(n) {
+  return "Rp " + n.toLocaleString("id-ID");
+}
 
-// KALKULATOR
-var HARGA = {
-  satuan: { basic: 400000, duo: 700000, triple: 1000000 },
-  retainer: { basic: 2500000, duo: 4500000, triple: 6500000 },
-  addonHarga: { ig: 150000, tt: 150000, lp: 50000 },
-  addonLabel: { ig: "Pin Post Instagram 7 hari", tt: "Pin Video TikTok 7 hari", lp: "Laporan Engagement" }
-};
-
-var tierLabel = {
-  basic: "Basic (Facebook Group)",
-  duo: "Duo (Facebook + Instagram)",
-  triple: "Triple (FB + IG + TikTok + YouTube)"
-};
-
-var addons = { ig: false, tt: false, lp: false };
-
+// ---- ADDON TOGGLE ----
 function toggleAddon(key) {
-  addons[key] = !addons[key];
   var chip = document.getElementById("chip-" + key);
+  if (!chip || chip.classList.contains("disabled")) return;
+  addons[key] = !addons[key];
   if (addons[key]) chip.classList.add("on");
   else chip.classList.remove("on");
   updateCalc();
 }
 
-function formatRp(n) {
-  return "Rp " + n.toLocaleString("id-ID");
-}
-
+// ---- UPDATE ADDON AVAILABILITY ----
 function updateAddonAvailability(tier) {
-  // Basic: hanya Laporan Engagement yang tersedia
-  // Duo: Pin IG + Laporan tersedia, Pin TikTok tidak
-  // Triple: semua tersedia
-  var rules = {
-    basic:  { ig: false, tt: false, lp: true },
-    duo:    { ig: true,  tt: false, lp: true },
-    triple: { ig: true,  tt: true,  lp: true }
-  };
-
-  var rule = rules[tier] || rules.basic;
-
+  var rule = ADDON_RULES[tier] || ADDON_RULES.triple;
   for (var k in rule) {
     var chip = document.getElementById("chip-" + k);
+    if (!chip) continue;
     if (!rule[k]) {
-      // Nonaktifkan — reset pilihan dan grey out
       addons[k] = false;
       chip.classList.remove("on");
-      chip.style.opacity = "0.3";
-      chip.style.pointerEvents = "none";
-      chip.style.cursor = "not-allowed";
+      chip.classList.add("disabled");
     } else {
-      // Aktifkan kembali
-      chip.style.opacity = "1";
-      chip.style.pointerEvents = "auto";
-      chip.style.cursor = "pointer";
+      chip.classList.remove("disabled");
     }
   }
 }
 
+// ---- MAIN CALCULATOR ----
 function updateCalc() {
-  var jenis = document.getElementById("jenisOrder").value;
-  var tier = document.getElementById("tier").value;
+  var jenis  = document.getElementById("jenisOrder").value;
+  var tier   = document.getElementById("tier").value;
   var durasi = parseInt(document.getElementById("durasi").value) || 1;
-  var isRetainer = jenis === "retainer";
+  var isRet  = jenis === "retainer";
 
+  // Durasi visibility
   var dw = document.getElementById("durasiWrap");
-  if (isRetainer) dw.classList.add("show");
+  if (isRet) dw.classList.add("show");
   else dw.classList.remove("show");
 
-  // Update ketersediaan add-on berdasarkan tier
+  // Update addon chips
   updateAddonAvailability(tier);
 
+  // Hitung harga
   var total = 0;
-  var html = "";
+  var html  = "";
 
-  if (isRetainer) {
+  if (isRet) {
     var perBulan = HARGA.retainer[tier];
     var sub = perBulan * durasi;
     total += sub;
-    html += '<div class="result-row"><span class="label">Retainer ' + tierLabel[tier] + '</span><span class="val">' + formatRp(perBulan) + '/bln</span></div>';
-    html += '<div class="result-row sub"><span class="label">× ' + durasi + ' bulan</span><span class="val">' + formatRp(sub) + '</span></div>';
+    html += '<div class="result-row"><span class="lbl">Retainer ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(perBulan) + '/bln</span></div>';
+    html += '<div class="result-row sub"><span class="lbl">&times; ' + durasi + ' bulan</span><span class="val">' + formatRp(sub) + '</span></div>';
   } else {
-    var hargaS = HARGA.satuan[tier];
-    total += hargaS;
-    html += '<div class="result-row"><span class="label">Posting Satuan ' + tierLabel[tier] + '</span><span class="val">' + formatRp(hargaS) + '</span></div>';
+    var hs = HARGA.satuan[tier];
+    total += hs;
+    html += '<div class="result-row"><span class="lbl">Posting Satuan ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(hs) + '</span></div>';
   }
 
   var adaAddon = false;
@@ -841,16 +339,31 @@ function updateCalc() {
       adaAddon = true;
       var h = HARGA.addonHarga[k];
       total += h;
-      html += '<div class="result-row"><span class="label">+ ' + HARGA.addonLabel[k] + '</span><span class="val">' + formatRp(h) + '</span></div>';
+      html += '<div class="result-row"><span class="lbl">+ ' + HARGA.addonLabel[k] + '</span><span class="val">' + formatRp(h) + '</span></div>';
     }
   }
-
   if (!adaAddon) {
-    html += '<div class="result-row sub"><span class="label">Tidak ada add-on</span><span class="val">—</span></div>';
+    html += '<div class="result-row sub"><span class="lbl">Tidak ada add-on</span><span class="val">—</span></div>';
   }
 
   document.getElementById("resultRows").innerHTML = html;
   document.getElementById("totalAmount").textContent = formatRp(total);
 
-  var jatahHtml = "";
-  if (isRetainer) {
+  var jatah = "";
+  if (isRet) {
+    jatah = '<div class="jatah-badge">📅 Jatah posting: ' + (8 * durasi) + 'x (' + durasi + ' bln &times; 8x/bln)</div>';
+  }
+  document.getElementById("jatahInfo").innerHTML = jatah;
+}
+
+// ---- EVENT LISTENERS ----
+document.getElementById("jenisOrder").addEventListener("change", updateCalc);
+document.getElementById("durasi").addEventListener("change", updateCalc);
+document.getElementById("tier").addEventListener("change", updateCalc);
+
+// ---- INIT ----
+applyTheme(currentTheme);
+updateCalc();
+</script>
+</body>
+</html>
