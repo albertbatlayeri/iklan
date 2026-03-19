@@ -239,12 +239,9 @@ input[type="file"]{display:none}
           <div class="form-group full">
             <label>Pilih Tier <span class="req">*</span></label>
             <select id="tier">
-              <option value="basic-satuan">Satuan Basic — Rp 400.000 (Facebook Group 400rb anggota)</option>
-              <option value="duo-satuan">Satuan Duo — Rp 700.000 (FB + Instagram)</option>
-              <option value="triple-satuan">Satuan Triple — Rp 1.000.000 (FB + IG + TikTok + YouTube bonus)</option>
-              <option value="basic-retainer">Retainer Basic — Rp 2.500.000/bln (8x posting FB/bulan)</option>
-              <option value="duo-retainer">Retainer Duo — Rp 4.500.000/bln (8x posting FB+IG/bulan)</option>
-              <option value="triple-retainer">Retainer Triple — Rp 6.500.000/bln (8x posting FB+IG+TikTok/bulan)</option>
+              <option value="basic">Basic — Rp 400.000 (Facebook Group 400rb anggota)</option>
+              <option value="duo">Duo — Rp 700.000 (FB + Instagram)</option>
+              <option value="triple">Triple — Rp 1.000.000 (FB + IG + TikTok + YouTube bonus)</option>
             </select>
           </div>
         </div>
@@ -523,6 +520,32 @@ function detectTierKey(val) {
   return "basic";
 }
 
+// ---- UPDATE TIER OPTIONS sesuai Jenis Order ----
+function updateTierOptions() {
+  var jenis = document.getElementById("jenisOrder").value;
+  var tierSel = document.getElementById("tier");
+  var currentTier = detectTierKey(tierSel.value);
+
+  var options = jenis === "retainer" ? [
+    { value: "basic",  text: "Retainer Basic — Rp 2.500.000/bln (8x posting FB/bulan)" },
+    { value: "duo",    text: "Retainer Duo — Rp 4.500.000/bln (8x posting FB+IG/bulan)" },
+    { value: "triple", text: "Retainer Triple — Rp 6.500.000/bln (8x posting FB+IG+TikTok/bulan)" }
+  ] : [
+    { value: "basic",  text: "Basic — Rp 400.000 (Facebook Group 400rb anggota)" },
+    { value: "duo",    text: "Duo — Rp 700.000 (FB + Instagram)" },
+    { value: "triple", text: "Triple — Rp 1.000.000 (FB + IG + TikTok + YouTube bonus)" }
+  ];
+
+  tierSel.innerHTML = "";
+  options.forEach(function(opt) {
+    var el = document.createElement("option");
+    el.value = opt.value;
+    el.textContent = opt.text;
+    if (opt.value === currentTier) el.selected = true;
+    tierSel.appendChild(el);
+  });
+}
+
 // ---- ADDON ORDER FORM ----
 function toggleAddon(key) {
   var chip = document.getElementById("chip-" + key);
@@ -552,12 +575,16 @@ function updateAddonChips(tier, prefix, addonObj) {
 
 // ---- ORDER CALC ----
 function updateOrderCalc() {
-  var tierVal = document.getElementById("tier").value;
+  var tier = document.getElementById("tier").value;
   var jenisVal = document.getElementById("jenisOrder").value;
   var durasi = document.getElementById("durasi").value;
   var durasiNum = parseInt(durasi) || 1;
-  var tier = detectTierKey(tierVal);
-  var isRet = jenisVal === "retainer" || tierVal.indexOf("retainer") !== -1;
+  var isRet = jenisVal === "retainer";
+
+  // Update opsi tier sesuai jenis order
+  updateTierOptions();
+  // Re-read tier setelah options diupdate
+  tier = document.getElementById("tier").value;
 
   // Durasi visibility
   var dw = document.getElementById("durasiWrap");
@@ -567,13 +594,13 @@ function updateOrderCalc() {
 
   var total = 0, html = "";
   if (isRet) {
-    var pb = HARGA.retainer[tier];
+    var pb = HARGA.retainer[tier] || 0;
     var sub = pb * durasiNum;
     total += sub;
     html += '<div class="result-row"><span class="lbl">Retainer ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(pb) + '/bln</span></div>';
     html += '<div class="result-row sub"><span class="lbl">&times; ' + durasiNum + ' bulan</span><span class="val">' + formatRp(sub) + '</span></div>';
   } else {
-    var hs = HARGA.satuan[tier];
+    var hs = HARGA.satuan[tier] || 0;
     total += hs;
     html += '<div class="result-row"><span class="lbl">Posting Satuan ' + TIER_LABEL[tier] + '</span><span class="val">' + formatRp(hs) + '</span></div>';
   }
