@@ -842,4 +842,15 @@ document.getElementById("jenisOrder").addEventListener("change", updateOrderCalc
 document.getElementById("durasi").addEventListener("change", updateOrderCalc);
 document.getElementById("tier").addEventListener("change", updateOrderCalc);
 document.getElementById("kalcJenis").addEventListener("change", updateKalc);
-document.getElementById("kalcDurasi").add
+document.getElementById("kalcDurasi").addEventListener("change", updateKalc);
+document.getElementById("kalcTier").addEventListener("change", updateKalc);
+
+// ---- INIT ----
+applyTheme(currentTheme);
+setMinDate();
+updateTierOptions();
+updateOrderCalc();
+updateKalc();
+</script>
+</body>
+</html>
