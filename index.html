@@ -775,12 +775,12 @@ function submitForm() {
     addon:         addonList.length > 0 ? addonList.join(", ") : "Tidak ada",
     tanggalPin:    document.getElementById("tanggalPin").value || "-",
     totalHarga:    total,
-    fileKonten:    kontenBase64 ? "uploaded" : "-",
-    fileBuktiData: buktiBase64 || null,
-    fileBuktiType: buktiType || null,
+    fileKonten:    kontenBase64 ? "Sudah diupload" : "Belum diupload",
+    buktiBayar:    buktiBase64 ? "Sudah diupload" : "Belum diupload",
     fileKontenData: kontenBase64 || null,
     fileKontenType: kontenType || null,
-    buktiBayar:    buktiBase64 ? "uploaded" : "-"
+    fileBuktiData:  buktiBase64 || null,
+    fileBuktiType:  buktiType || null
   };
 
   // Disable tombol & tampilkan loading
