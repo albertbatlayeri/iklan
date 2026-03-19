@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +9,122 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --merah: #E63946;
-    --biru: #1D3557;
-    --biru-muda: #457B9D;
     --kuning: #FFB703;
-    --putih: #F8F9FA;
-    --abu: #6C757D;
-    --gelap: #0D1B2A;
+    --kuning-hover: #FFC933;
+  }
+
+  /* DARK MODE */
+  [data-theme="dark"] {
+    --bg: #0D1B2A;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.07);
+    --bg-result: linear-gradient(135deg, rgba(29,53,87,0.6), rgba(13,27,42,0.8));
+    --border: rgba(255,255,255,0.08);
+    --border-hover: rgba(255,183,3,0.4);
+    --border-result: rgba(69,123,157,0.4);
+    --text-primary: #F8F9FA;
+    --text-secondary: rgba(248,249,250,0.65);
+    --text-muted: rgba(255,255,255,0.4);
+    --text-label: rgba(255,255,255,0.45);
+    --text-section: #457B9D;
+    --select-bg: rgba(255,255,255,0.06);
+    --select-border: rgba(255,255,255,0.12);
+    --select-option: #1a2a3a;
+    --addon-bg: rgba(255,255,255,0.05);
+    --addon-on-bg: rgba(255,183,3,0.12);
+    --addon-on-border: rgba(255,183,3,0.5);
+    --stat-bg: rgba(255,255,255,0.06);
+    --stat-border: rgba(255,255,255,0.1);
+    --divider: rgba(255,255,255,0.1);
+    --syarat-icon-bg: rgba(69,123,157,0.2);
+    --jatah-bg: rgba(69,123,157,0.2);
+    --jatah-border: rgba(69,123,157,0.4);
+    --jatah-color: #A8DAFF;
+    --hero-glow: rgba(69,123,157,0.25);
+    --toggle-bg: rgba(255,255,255,0.08);
+    --toggle-border: rgba(255,255,255,0.15);
+    --featured-bg: rgba(255,183,3,0.05);
+    --featured-border: rgba(255,183,3,0.35);
+    --section-line: rgba(255,255,255,0.08);
+  }
+
+  /* LIGHT MODE */
+  [data-theme="light"] {
+    --bg: #F0F4F8;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F8FBFF;
+    --bg-result: linear-gradient(135deg, #E8F0FE, #F0F7FF);
+    --border: rgba(0,0,0,0.08);
+    --border-hover: rgba(255,183,3,0.6);
+    --border-result: rgba(29,53,87,0.2);
+    --text-primary: #0D1B2A;
+    --text-secondary: rgba(13,27,42,0.7);
+    --text-muted: rgba(13,27,42,0.45);
+    --text-label: rgba(13,27,42,0.5);
+    --text-section: #1D3557;
+    --select-bg: #FFFFFF;
+    --select-border: rgba(0,0,0,0.12);
+    --select-option: #FFFFFF;
+    --addon-bg: #F8F9FA;
+    --addon-on-bg: rgba(255,183,3,0.1);
+    --addon-on-border: rgba(255,183,3,0.6);
+    --stat-bg: #FFFFFF;
+    --stat-border: rgba(0,0,0,0.08);
+    --divider: rgba(0,0,0,0.08);
+    --syarat-icon-bg: rgba(29,53,87,0.08);
+    --jatah-bg: rgba(29,53,87,0.06);
+    --jatah-border: rgba(29,53,87,0.15);
+    --jatah-color: #1D3557;
+    --hero-glow: rgba(29,53,87,0.08);
+    --toggle-bg: rgba(0,0,0,0.05);
+    --toggle-border: rgba(0,0,0,0.1);
+    --featured-bg: rgba(255,183,3,0.05);
+    --featured-border: rgba(255,183,3,0.5);
+    --section-line: rgba(0,0,0,0.06);
   }
 
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background: var(--gelap);
-    color: var(--putih);
+    background: var(--bg);
+    color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    border-radius: 100px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all 0.2s;
+    backdrop-filter: blur(10px);
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--kuning);
+    color: var(--kuning);
+  }
+
+  .theme-toggle .icon {
+    font-size: 14px;
+    transition: transform 0.3s;
+  }
+
+  .theme-toggle:hover .icon {
+    transform: rotate(20deg);
   }
 
   /* HERO */
@@ -40,7 +141,7 @@
     top: -100px; left: 50%;
     transform: translateX(-50%);
     width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(69,123,157,0.25) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--hero-glow) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -60,25 +161,23 @@
 
   .hero h1 {
     font-family: 'Sora', sans-serif;
-    font-size: clamp(28px, 6vw, 52px);
+    font-size: clamp(24px, 5vw, 48px);
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 16px;
+    color: var(--text-primary);
   }
 
-  .hero h1 span {
-    color: var(--kuning);
-  }
+  .hero h1 span { color: var(--kuning); }
 
   .hero p {
     font-size: 16px;
-    color: rgba(248,249,250,0.65);
+    color: var(--text-secondary);
     max-width: 520px;
     margin: 0 auto 32px;
     line-height: 1.7;
   }
 
-  /* STATS */
   .stats {
     display: flex;
     justify-content: center;
@@ -88,19 +187,19 @@
   }
 
   .stat-pill {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--stat-bg);
+    border: 1px solid var(--stat-border);
     border-radius: 100px;
     padding: 8px 16px;
     font-size: 13px;
     font-weight: 500;
+    color: var(--text-primary);
+    transition: background 0.3s;
   }
 
-  .stat-pill strong {
-    color: var(--kuning);
-  }
+  .stat-pill strong { color: var(--kuning); }
 
-  /* MAIN CONTENT */
+  /* CONTAINER */
   .container {
     max-width: 900px;
     margin: 0 auto;
@@ -113,7 +212,7 @@
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--biru-muda);
+    color: var(--text-section);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -124,17 +223,17 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: rgba(255,255,255,0.08);
+    background: var(--section-line);
   }
 
   /* KALKULATOR */
   .calc-wrapper {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 20px;
     padding: 28px;
     margin-bottom: 16px;
-    backdrop-filter: blur(10px);
+    transition: background 0.3s, border-color 0.3s;
   }
 
   .calc-title {
@@ -142,11 +241,12 @@
     font-size: 18px;
     font-weight: 600;
     margin-bottom: 6px;
+    color: var(--text-primary);
   }
 
   .calc-sub {
     font-size: 13px;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-muted);
     margin-bottom: 24px;
   }
 
@@ -172,24 +272,24 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-label);
   }
 
   .form-group select {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
+    background: var(--select-bg);
+    border: 1px solid var(--select-border);
     border-radius: 10px;
-    color: var(--putih);
+    color: var(--text-primary);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
-    padding: 11px 14px;
+    padding: 11px 36px 11px 14px;
     cursor: pointer;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, background 0.3s;
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23aaa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 14px center;
-    padding-right: 36px;
+    background-color: var(--select-bg);
   }
 
   .form-group select:focus {
@@ -198,7 +298,8 @@
   }
 
   .form-group select option {
-    background: #1a2a3a;
+    background: var(--select-option);
+    color: #0D1B2A;
   }
 
   /* ADDON */
@@ -207,7 +308,7 @@
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-label);
     margin-bottom: 10px;
   }
 
@@ -222,30 +323,29 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: var(--addon-bg);
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 9px 14px;
     font-size: 13px;
     cursor: pointer;
     transition: all 0.18s;
     user-select: none;
+    color: var(--text-primary);
   }
 
-  .addon-chip:hover {
-    border-color: rgba(255,183,3,0.4);
-  }
+  .addon-chip:hover { border-color: var(--border-hover); }
 
   .addon-chip.on {
-    background: rgba(255,183,3,0.12);
-    border-color: rgba(255,183,3,0.5);
+    background: var(--addon-on-bg);
+    border-color: var(--addon-on-border);
     color: var(--kuning);
   }
 
   .addon-chip .dot {
     width: 16px; height: 16px;
     border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.3);
+    border: 1.5px solid var(--text-muted);
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     transition: all 0.18s;
@@ -259,17 +359,18 @@
   .addon-chip.on .dot::after {
     content: '✓';
     font-size: 10px;
-    color: var(--gelap);
+    color: #0D1B2A;
     font-weight: 700;
   }
 
   /* RESULT */
   .result-box {
-    background: linear-gradient(135deg, rgba(29,53,87,0.6), rgba(13,27,42,0.8));
-    border: 1px solid rgba(69,123,157,0.4);
+    background: var(--bg-result);
+    border: 1px solid var(--border-result);
     border-radius: 14px;
     padding: 20px 22px;
     margin-bottom: 20px;
+    transition: all 0.3s;
   }
 
   .result-rows {
@@ -286,15 +387,15 @@
     font-size: 13px;
   }
 
-  .result-row .label { color: rgba(255,255,255,0.6); flex: 1; }
-  .result-row .val { font-weight: 500; color: var(--putih); text-align: right; }
+  .result-row .label { color: var(--text-secondary); flex: 1; }
+  .result-row .val { font-weight: 500; color: var(--text-primary); text-align: right; }
   .result-row.sub { padding-left: 14px; }
-  .result-row.sub .label { font-size: 12px; color: rgba(255,255,255,0.4); }
-  .result-row.sub .val { font-size: 12px; color: rgba(255,255,255,0.5); }
+  .result-row.sub .label { font-size: 12px; color: var(--text-muted); }
+  .result-row.sub .val { font-size: 12px; color: var(--text-muted); }
 
   .total-divider {
     height: 1px;
-    background: rgba(255,255,255,0.1);
+    background: var(--divider);
     margin: 12px 0;
   }
 
@@ -307,7 +408,7 @@
   .total-label {
     font-size: 13px;
     font-weight: 600;
-    color: rgba(255,255,255,0.7);
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
   }
@@ -323,21 +424,21 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(69,123,157,0.2);
-    border: 1px solid rgba(69,123,157,0.4);
+    background: var(--jatah-bg);
+    border: 1px solid var(--jatah-border);
     border-radius: 100px;
     padding: 4px 12px;
     font-size: 12px;
-    color: #A8DAFF;
+    color: var(--jatah-color);
     margin-top: 10px;
   }
 
-  /* CTA BUTTON */
+  /* CTA */
   .cta-btn {
     display: block;
     width: 100%;
     background: var(--kuning);
-    color: var(--gelap);
+    color: #0D1B2A;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 15px;
     font-weight: 700;
@@ -352,7 +453,7 @@
   }
 
   .cta-btn:hover {
-    background: #FFC933;
+    background: var(--kuning-hover);
     transform: translateY(-1px);
     box-shadow: 0 8px 24px rgba(255,183,3,0.3);
   }
@@ -360,11 +461,11 @@
   .cta-note {
     text-align: center;
     font-size: 12px;
-    color: rgba(255,255,255,0.35);
+    color: var(--text-muted);
     margin-top: 10px;
   }
 
-  /* TIER CARDS INFO */
+  /* TIER CARDS */
   .tier-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -377,15 +478,16 @@
   }
 
   .tier-card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 14px;
     padding: 18px;
+    transition: background 0.3s, border-color 0.3s;
   }
 
   .tier-card.featured {
-    border-color: rgba(255,183,3,0.35);
-    background: rgba(255,183,3,0.05);
+    border-color: var(--featured-border);
+    background: var(--featured-bg);
   }
 
   .tier-name {
@@ -393,11 +495,12 @@
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 4px;
+    color: var(--text-primary);
   }
 
   .tier-reach {
     font-size: 11px;
-    color: rgba(255,255,255,0.4);
+    color: var(--text-muted);
     margin-bottom: 12px;
   }
 
@@ -413,18 +516,20 @@
     font-weight: 600;
     padding: 3px 8px;
     border-radius: 100px;
-    background: rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.6);
+    background: var(--addon-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
   }
 
   .platform-tag.bonus {
     background: rgba(255,183,3,0.12);
     color: var(--kuning);
+    border-color: rgba(255,183,3,0.3);
   }
 
-  .tier-price-satuan {
+  .tier-price-label {
     font-size: 12px;
-    color: rgba(255,255,255,0.45);
+    color: var(--text-muted);
     margin-bottom: 2px;
   }
 
@@ -432,7 +537,13 @@
     font-family: 'Sora', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: var(--putih);
+    color: var(--text-primary);
+  }
+
+  .tier-price-retainer {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
   }
 
   /* SYARAT */
@@ -448,27 +559,20 @@
     gap: 10px;
     align-items: flex-start;
     font-size: 13px;
-    color: rgba(255,255,255,0.65);
+    color: var(--text-secondary);
     line-height: 1.5;
   }
 
   .syarat-icon {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
+    width: 20px; height: 20px; min-width: 20px;
     border-radius: 50%;
-    background: rgba(69,123,157,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--syarat-icon-bg);
+    display: flex; align-items: center; justify-content: center;
     font-size: 10px;
     margin-top: 1px;
   }
 
-  /* DURASI FIELD */
-  .durasi-wrap {
-    display: none;
-  }
+  .durasi-wrap { display: none; }
   .durasi-wrap.show {
     display: flex;
     flex-direction: column;
@@ -478,22 +582,27 @@
 </head>
 <body>
 
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">
+  <span class="icon" id="themeIcon">☀️</span>
+  <span id="themeText">Terang</span>
+</button>
+
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">Media Terpercaya Papua sejak 2009</div>
-  <h1>Iklankan Bisnis Kamu<br>di <span>IKKJ Lelemuku.com</span></h1>
+  <div class="hero-badge">Info Kejadian Terpercaya di Papua sejak 2009</div>
+  <h1>Iklankan Bisnis Kamu<br>di <span>Info Kejadian Kota Jayapura | IKKJ</span></h1>
   <p>Jangkau ratusan ribu warga Jayapura dan Papua melalui platform media sosial terbesar di Papua.</p>
   <div class="stats">
-    <div class="stat-pill"><strong>395.200</strong> anggota Facebook</div>
-    <div class="stat-pill"><strong>118.100</strong> followers TikTok</div>
-    <div class="stat-pill"><strong>26.800</strong> followers Instagram</div>
+    <div class="stat-pill"><strong>400.000</strong> anggota Facebook</div>
+    <div class="stat-pill"><strong>120.000</strong> followers TikTok</div>
+    <div class="stat-pill"><strong>27.000</strong> followers Instagram</div>
   </div>
 </div>
 
 <!-- MAIN -->
 <div class="container">
 
-  <!-- KALKULATOR -->
   <div class="section-title">Kalkulator Harga Iklan</div>
 
   <div class="calc-wrapper">
@@ -521,7 +630,7 @@
     <div class="form-group" style="margin-bottom:16px;">
       <label>Pilih Tier</label>
       <select id="tier" onchange="updateCalc()">
-        <option value="basic">Basic — Facebook Group (395.200 anggota)</option>
+        <option value="basic">Basic — Facebook Group (400.000 anggota)</option>
         <option value="duo">Duo — Facebook + Instagram</option>
         <option value="triple">Triple — Facebook + Instagram + TikTok + YouTube bonus</option>
       </select>
@@ -531,15 +640,15 @@
     <div class="addon-grid">
       <div class="addon-chip" id="chip-ig" onclick="toggleAddon('ig')">
         <div class="dot"></div>
-        Pin Instagram 7 hari <span style="color:rgba(255,255,255,0.4); font-size:12px;">+Rp 150rb</span>
+        Pin Instagram 7 hari <span style="color:var(--text-muted); font-size:12px; margin-left:4px;">+Rp 150rb</span>
       </div>
       <div class="addon-chip" id="chip-tt" onclick="toggleAddon('tt')">
         <div class="dot"></div>
-        Pin TikTok 7 hari <span style="color:rgba(255,255,255,0.4); font-size:12px;">+Rp 150rb</span>
+        Pin TikTok 7 hari <span style="color:var(--text-muted); font-size:12px; margin-left:4px;">+Rp 150rb</span>
       </div>
       <div class="addon-chip" id="chip-lp" onclick="toggleAddon('lp')">
         <div class="dot"></div>
-        Laporan Engagement <span style="color:rgba(255,255,255,0.4); font-size:12px;">+Rp 50rb</span>
+        Laporan Engagement <span style="color:var(--text-muted); font-size:12px; margin-left:4px;">+Rp 50rb</span>
       </div>
     </div>
 
@@ -559,45 +668,43 @@
     <div class="cta-note">Bayar via QRIS · Tayang dalam 1x24 jam · Merchant: LELEMUKU.COM</div>
   </div>
 
-  <!-- TIER INFO -->
+  <!-- TIER CARDS -->
   <div class="section-title" style="margin-top:40px;">Pilihan Paket</div>
   <div class="tier-cards">
     <div class="tier-card">
       <div class="tier-name">Basic</div>
-      <div class="tier-reach">Facebook Group</div>
-      <div class="tier-platform">
-        <span class="platform-tag">Facebook</span>
-      </div>
-      <div class="tier-price-satuan">Satuan</div>
+      <div class="tier-reach">Facebook Group · 400.000 anggota</div>
+      <div class="tier-platform"><span class="platform-tag">Facebook</span></div>
+      <div class="tier-price-label">Satuan</div>
       <div class="tier-price-main">Rp 400.000</div>
-      <div class="tier-price-satuan" style="margin-top:8px;">Retainer/bulan</div>
-      <div style="font-size:15px; font-weight:600;">Rp 2.500.000</div>
+      <div class="tier-price-label" style="margin-top:10px;">Retainer / bulan</div>
+      <div class="tier-price-retainer">Rp 2.500.000</div>
     </div>
     <div class="tier-card featured">
       <div class="tier-name" style="color:var(--kuning);">Duo ⭐</div>
-      <div class="tier-reach">FB + Instagram</div>
+      <div class="tier-reach">FB · 400rb + IG · 27rb followers</div>
       <div class="tier-platform">
         <span class="platform-tag">Facebook</span>
         <span class="platform-tag">Instagram</span>
       </div>
-      <div class="tier-price-satuan">Satuan</div>
+      <div class="tier-price-label">Satuan</div>
       <div class="tier-price-main">Rp 700.000</div>
-      <div class="tier-price-satuan" style="margin-top:8px;">Retainer/bulan</div>
-      <div style="font-size:15px; font-weight:600;">Rp 4.500.000</div>
+      <div class="tier-price-label" style="margin-top:10px;">Retainer / bulan</div>
+      <div class="tier-price-retainer">Rp 4.500.000</div>
     </div>
     <div class="tier-card">
       <div class="tier-name">Triple</div>
-      <div class="tier-reach">FB + IG + TikTok</div>
+      <div class="tier-reach">FB + IG + TikTok · 120rb followers</div>
       <div class="tier-platform">
         <span class="platform-tag">Facebook</span>
         <span class="platform-tag">Instagram</span>
         <span class="platform-tag">TikTok</span>
         <span class="platform-tag bonus">YouTube ✦</span>
       </div>
-      <div class="tier-price-satuan">Satuan</div>
+      <div class="tier-price-label">Satuan</div>
       <div class="tier-price-main">Rp 1.000.000</div>
-      <div class="tier-price-satuan" style="margin-top:8px;">Retainer/bulan</div>
-      <div style="font-size:15px; font-weight:600;">Rp 6.500.000</div>
+      <div class="tier-price-label" style="margin-top:10px;">Retainer / bulan</div>
+      <div class="tier-price-retainer">Rp 6.500.000</div>
     </div>
   </div>
 
@@ -611,13 +718,38 @@
       <div class="syarat-item"><div class="syarat-icon">⏰</div>Konten tayang dalam 1x24 jam setelah pembayaran dan konten diterima.</div>
       <div class="syarat-item"><div class="syarat-icon">📅</div>Retainer: periode berjalan sejak pembayaran diterima. Jatah posting tidak terpakai hangus di akhir periode.</div>
       <div class="syarat-item"><div class="syarat-icon">📌</div>Slot pin IG dan TikTok terbatas (maks. 3 slot bersamaan). Booking lebih awal untuk mengamankan slot.</div>
-      <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: redaksi@lelemuku.com</div>
+      <div class="syarat-item"><div class="syarat-icon">❓</div>Pertanyaan? Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="44362120252f372d042821282129312f316a272b29">[email&#160;protected]</a></div>
     </div>
   </div>
 
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// THEME TOGGLE
+var currentTheme = localStorage.getItem('ikkj-theme') || 'dark';
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  var icon = document.getElementById('themeIcon');
+  var text = document.getElementById('themeText');
+  if (theme === 'dark') {
+    icon.textContent = '☀️';
+    text.textContent = 'Terang';
+  } else {
+    icon.textContent = '🌙';
+    text.textContent = 'Gelap';
+  }
+  localStorage.setItem('ikkj-theme', theme);
+  currentTheme = theme;
+}
+
+function toggleTheme() {
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+}
+
+applyTheme(currentTheme);
+
+// KALKULATOR
 var HARGA = {
   satuan: { basic: 400000, duo: 700000, triple: 1000000 },
   retainer: { basic: 2500000, duo: 4500000, triple: 6500000 },
@@ -645,16 +777,48 @@ function formatRp(n) {
   return "Rp " + n.toLocaleString("id-ID");
 }
 
+function updateAddonAvailability(tier) {
+  // Basic: hanya Laporan Engagement yang tersedia
+  // Duo: Pin IG + Laporan tersedia, Pin TikTok tidak
+  // Triple: semua tersedia
+  var rules = {
+    basic:  { ig: false, tt: false, lp: true },
+    duo:    { ig: true,  tt: false, lp: true },
+    triple: { ig: true,  tt: true,  lp: true }
+  };
+
+  var rule = rules[tier] || rules.basic;
+
+  for (var k in rule) {
+    var chip = document.getElementById("chip-" + k);
+    if (!rule[k]) {
+      // Nonaktifkan — reset pilihan dan grey out
+      addons[k] = false;
+      chip.classList.remove("on");
+      chip.style.opacity = "0.3";
+      chip.style.pointerEvents = "none";
+      chip.style.cursor = "not-allowed";
+    } else {
+      // Aktifkan kembali
+      chip.style.opacity = "1";
+      chip.style.pointerEvents = "auto";
+      chip.style.cursor = "pointer";
+    }
+  }
+}
+
 function updateCalc() {
   var jenis = document.getElementById("jenisOrder").value;
   var tier = document.getElementById("tier").value;
   var durasi = parseInt(document.getElementById("durasi").value) || 1;
   var isRetainer = jenis === "retainer";
 
-  // Tampilkan/sembunyikan durasi
   var dw = document.getElementById("durasiWrap");
   if (isRetainer) dw.classList.add("show");
   else dw.classList.remove("show");
+
+  // Update ketersediaan add-on berdasarkan tier
+  updateAddonAvailability(tier);
 
   var total = 0;
   var html = "";
@@ -690,12 +854,3 @@ function updateCalc() {
 
   var jatahHtml = "";
   if (isRetainer) {
-    jatahHtml = '<div class="jatah-badge">📅 Jatah posting: ' + (8 * durasi) + 'x (' + durasi + ' bln × 8x/bln)</div>';
-  }
-  document.getElementById("jatahInfo").innerHTML = jatahHtml;
-}
-
-updateCalc();
-</script>
-</body>
-</html>
