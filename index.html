@@ -25,6 +25,8 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .stats{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .stat-pill{background:var(--stat-bg);border:1px solid var(--stat-border);border-radius:100px;padding:7px 14px;font-size:13px;font-weight:500;color:var(--text-primary)}
 .stat-pill strong{color:var(--kuning)}
+a.stat-pill{text-decoration:none;transition:all .2s}
+a.stat-pill:hover{border-color:var(--kuning);transform:translateY(-1px)}
 
 .container{max-width:860px;margin:0 auto;padding:0 20px 80px}
 .section-title{font-family:'Sora',sans-serif;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-section);margin-bottom:16px;display:flex;align-items:center;gap:10px}
@@ -156,13 +158,14 @@ input[type="file"]{display:none}
 <div class="hero">
   <div class="hero-badge">Info Kejadian Terpercaya di Papua sejak 2009</div>
   <h1>Iklankan Bisnis Kamu<br>di <span>IKKJ | Lelemuku.com</span></h1>
-  <p>Jangkau ratusan ribu warga Jayapura dan Papua melalui platform forum media sosial publik terbesar di Papua.</p>
+  <p>Jangkau ratusan ribu warga Jayapura dan Papua melalui platform media sosial terbesar di Papua.</p>
   <div class="stats">
-    <a class="stat-pill" href="https://www.facebook.com/groups/info.kejadian.kota.jayapura/" target="_blank"><strong>400.000</strong> members Facebook</a>
-    <a class="stat-pill" href="https://www.tiktok.com/@jayapura.id" target="_blank"><strong>118.000</strong> followers TikTok</a>
+    <a class="stat-pill" href="https://www.facebook.com/groups/info.kejadian.kota.jayapura/" target="_blank"><strong>400.000</strong> anggota Facebook</a>
+    <a class="stat-pill" href="https://www.tiktok.com/@jayapura.id" target="_blank"><strong>120.000</strong> followers TikTok</a>
     <a class="stat-pill" href="https://www.instagram.com/jayapura._/" target="_blank"><strong>27.000</strong> followers Instagram</a>
   </div>
 </div>
+
 <!-- MAIN -->
 <div class="container">
 
@@ -181,8 +184,13 @@ input[type="file"]{display:none}
     <div class="success-state" id="successState">
       <div class="success-icon">🎉</div>
       <div class="success-title">Order Berhasil Dikirim!</div>
-      <div class="success-desc">Terima kasih! Tim IKKJ akan memverifikasi pembayaran dan konten kamu, lalu menghubungi via WhatsApp dalam 1x24 jam.</div>
-      <button class="btn-back" onclick="resetForm()">← Pesan Lagi</button>
+      <div class="success-desc">Terima kasih! Pesanan kamu sudah diterima.<br>Kamu akan diarahkan ke WhatsApp dalam beberapa detik untuk konfirmasi ke tim IKKJ.</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-bottom:20px">Jika tidak otomatis terbuka, klik tombol di bawah:</div>
+      <a id="waBtn" href="https://wa.me/6282381305886" target="_blank" class="btn-submit" style="display:inline-block;width:auto;padding:12px 28px;text-decoration:none;margin-bottom:12px">
+        Chat via WhatsApp →
+      </a>
+      <br>
+      <button class="btn-back" onclick="resetForm()" style="margin-top:8px">← Pesan Lagi</button>
     </div>
 
     <!-- FORM -->
